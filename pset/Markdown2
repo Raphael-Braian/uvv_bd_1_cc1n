@@ -1,0 +1,17 @@
+#PSET
+Essa pasta, e especialmente esse bloco de texto, é a minha primeira etapa na estruturação de um espaço para armazenar 
+os meus scripts e o meu progresso no Pset, direcionando eles para o meu repositório Github através do comando PUSH.
+Quando eu criei esse subdiretório, eu tive de enfrentar alguns problemas. Entre eles:
+
+1. A pouca memória RAM do meu computador (4GB) permite que eu rode a Máquina Virtual e o BD Server, porém com
+tremenda lentidão e dificuldade. Impossibilitado de instalar os aplicativos necessários no meu computador Windows,
+tive de me virar com o que podia.
+
+1. Quando instalei e terminei de configurar o Git na máquina virtual, acabei me deparando com um problema. Sempre
+que eu tentava executar o comando Push, e o Initial Commit, para este documento de texto e sub-diretório, eu me deparava
+ com o erro ''Gtk-Messae: 17:02:38.635: Failed to load module'', seguido de campos de Login e Senha, para preenchimento 
+obrigatório. Mesmo inserindo meu login e senha do Github, não era possível seguir com o comando Push. 
+Felizmente, meu colega Carlos me mandou uma mensagem, questionando se eu estava enfrentando o exato mesmo problema que ele.
+E era exatamente isso! Então ele me disse que questionou o professor Abrantes, e a solução era criar um código TOKEN
+do Github para inserir no lugar do campo que requisitava uma senha. Eu pesquisei uma maneira de fazer isso, e dito e feito,
+acabou funcionando e eu pude executar o comando Push.
