@@ -10,13 +10,13 @@
  <source-databases>
  </source-databases>
  <target-database id="ppdb" dbcs-ref="DS0">
-  <table id="TAB1" populated="true" UUID="df310129-ae7e-47b0-88e9-9a991cb22088" name="regioes" objectType="TABLE" physicalName="regions" >
+  <table id="TAB1" populated="true" UUID="df310129-ae7e-47b0-88e9-9a991cb22088" name="regioes" objectType="TABLE" physicalName="regioes" >
    <remarks>Essa é a tabela de regiões. É a primeira tabela que eu decidi recriar no SQL Power Architect, não só por ser uma das mais simples do projeto, como por se conectar com apenas outra tabela através de uma PK, a tabela países.</remarks>
    <folder id="FOLTAB11" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL2" populated="true" UUID="ad29dde8-8a00-45b0-85d4-731901270f2c" autoIncrement="false" autoIncrementSequenceName="regions_id_regiao_seq" defaultValue="" name="id_regiao" nullable="0" physicalName="id_regiao" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL2" populated="true" UUID="ad29dde8-8a00-45b0-85d4-731901270f2c" autoIncrement="false" autoIncrementSequenceName="regioes_id_regiao_seq" defaultValue="" name="id_regiao" nullable="0" physicalName="id_regiao" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Tabela do ID de região. Eu estava em dúvidas sobre o que exatamente é um &apos;&apos;ID de região&apos;&apos;. Entendo que é um número, mas não conhecia o propósito. É como um DDD de celular? Tive de pesquisar para entender melhor.</remarks>
     </column>
-    <column id="COL3" populated="true" UUID="c357ab02-7c01-4e14-961c-37e6ceec62ac" autoIncrement="false" autoIncrementSequenceName="regions_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="25" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL3" populated="true" UUID="c357ab02-7c01-4e14-961c-37e6ceec62ac" autoIncrement="false" autoIncrementSequenceName="regioes_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="25" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks>Essa é a coluna Nome. O que mais me deu dificuldades nessa parte foi descobrir como limitar a quantidade de Varchar para 25.</remarks>
     </column>
     </folder>
@@ -54,7 +54,7 @@
     <index id="IDX12" populated="true" UUID="19de78d7-d7f7-433a-ab6c-82b99467d273" clustered="false" name="id_pais" physicalName="id_pais" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC13" populated="true" UUID="bf5995f0-8581-4167-a624-f68e47913bfa" ascendingOrDescending="UNSPECIFIED" column-ref="COL9" name="id_pais" physicalName="id_pais" />
     </index>
-    <index id="IDX14" populated="true" UUID="b4146ebd-4eb3-46db-8fa4-af325c97fe10" clustered="false" name="regioes_idx" physicalName="regioes_idx_1" primaryKeyIndex="false" unique="true" >
+    <index id="IDX14" populated="true" UUID="b4146ebd-4eb3-46db-8fa4-af325c97fe10" clustered="false" name="regioes_idx" physicalName="regioes_idx" primaryKeyIndex="false" unique="true" >
      <index-column id="IDC15" populated="true" UUID="d892b4f0-566a-447f-ac84-179a22abd074" ascendingOrDescending="UNSPECIFIED" column-ref="COL10" name="nome" physicalName="nome" />
     </index>
    </folder>
@@ -148,8 +148,8 @@ Desculpe, estou muito cansado e não tô raciocinando direito hoje. Imploro ao p
     <column id="COL42" populated="true" UUID="5f9e5b03-f744-4552-83c6-d6eb3bb9c070" autoIncrement="false" autoIncrementSequenceName="departamentos_id_departamento_seq_1" defaultValue="" name="id_departamento" nullable="0" physicalName="id_departamento" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Esse é mais um campo Integer, da tabela de Departamentos. É o ID de Departamento. Eu não tinha ideia que Departamentos precisavam de IDs. Não é mais fácil só identificar pelo nome do departamento?</remarks>
     </column>
-    <column id="COL43" populated="true" UUID="36592b37-ec0d-4d06-89d4-1a49505de91e" autoIncrement="false" autoIncrementSequenceName="empregados_id_supervisor_seq" defaultValue="" name="id_supervisor" nullable="1" physicalName="id_supervisor" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks>E esse é o ID do supervisor. Provavelmente um cara muito chato que gosta de se meter no trabalho dos outros.</remarks>
+    <column id="COL43" populated="true" UUID="1840b0a6-c0ca-4cbe-8ad3-fe6a1029f3c1" autoIncrement="false" autoIncrementSequenceName="empregados_id_empregado_seq" defaultValue="" name="id_supervisor" nullable="0" physicalName="id_supervisor" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Esse é o ID do supervisor, o único campo em todo sistema que se relaciona com a própria tabela. Tive dificuldades de entender como fazer isso, então tirei algumas dúvidas com colegas.</remarks>
     </column>
     </folder>
     <folder id="FOLTAB333" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
@@ -160,7 +160,7 @@ Desculpe, estou muito cansado e não tô raciocinando direito hoje. Imploro ao p
     <index id="IDX44" populated="true" UUID="0715f89e-ee1c-49e7-9527-36c5a97b0243" clustered="false" name="id_empregado" physicalName="id_empregado" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC45" populated="true" UUID="db560115-acc7-4781-b491-22a575a39c60" ascendingOrDescending="UNSPECIFIED" column-ref="COL34" name="id_empregado" physicalName="id_empregado" />
     </index>
-    <index id="IDX46" populated="true" UUID="09aa9a5a-77dc-4ad8-b0b6-ff25e20a887b" clustered="false" name="AK" physicalName="AK_1" primaryKeyIndex="false" unique="true" >
+    <index id="IDX46" populated="true" UUID="09aa9a5a-77dc-4ad8-b0b6-ff25e20a887b" clustered="false" name="AK" physicalName="AK" primaryKeyIndex="false" unique="true" >
      <index-column id="IDC47" populated="true" UUID="2c0f3ae3-624b-46d5-9c0e-e236c7aa5b72" ascendingOrDescending="UNSPECIFIED" column-ref="COL36" name="email" physicalName="email" />
     </index>
    </folder>
@@ -189,7 +189,7 @@ Desculpe, estou muito cansado e não tô raciocinando direito hoje. Imploro ao p
     <index id="IDX53" populated="true" UUID="5dd284d3-a040-4b59-9c93-9a701f608410" clustered="false" name="id_cargo" physicalName="id_cargo" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC54" populated="true" UUID="a9c15eae-c61c-4c15-ba5d-92bb4202f4bc" ascendingOrDescending="UNSPECIFIED" column-ref="COL49" name="id_cargo" physicalName="id_cargo" />
     </index>
-    <index id="IDX55" populated="true" UUID="c8c76b28-34bf-4b71-8e46-a100f21ff9db" clustered="false" name="AK" physicalName="AK_2" primaryKeyIndex="false" unique="true" >
+    <index id="IDX55" populated="true" UUID="c8c76b28-34bf-4b71-8e46-a100f21ff9db" clustered="false" name="AK" physicalName="AK" primaryKeyIndex="false" unique="true" >
      <index-column id="IDC56" populated="true" UUID="b342d95d-8722-4074-8525-4513730c42e1" ascendingOrDescending="UNSPECIFIED" column-ref="COL50" name="cargo" physicalName="cargo" />
     </index>
    </folder>
@@ -225,8 +225,8 @@ Desculpe, estou muito cansado e não tô raciocinando direito hoje. Imploro ao p
    </folder>
   </table>
   <relationships>
-   <relationship id="REL66" populated="true" UUID="217f5bb1-bd72-47dc-b6f2-697a4c5b8d1c" deferrability="7" deleteRule="3" fk-table-ref="TAB8" fkCardinality="7" identifying="true" name="regions_regioes_fk" physicalName="regions_regioes_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP67" populated="true" UUID="48548d4c-3325-421b-8d86-f24b9b61ed30" fk-column-ref="COL11" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   <relationship id="REL66" populated="true" UUID="217f5bb1-bd72-47dc-b6f2-697a4c5b8d1c" deferrability="7" deleteRule="3" fk-table-ref="TAB8" fkCardinality="7" identifying="false" name="regions_regioes_fk" physicalName="regions_regioes_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP67" populated="true" UUID="ef641408-d3c8-423c-a985-8e3ab801f246" fk-column-ref="COL11" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
    </relationship>
    <relationship id="REL68" populated="true" UUID="2d3bc60b-e35f-4c75-94f5-640a506f3daf" deferrability="7" deleteRule="3" fk-table-ref="TAB16" fkCardinality="7" identifying="false" name="regioes_localizacoes_fk" physicalName="regioes_localizacoes_fk" pk-table-ref="TAB8" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP69" populated="true" UUID="a47dc27b-41ee-40ba-a0bd-a562b2ffefff" fk-column-ref="COL21" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL9" />
@@ -243,11 +243,14 @@ Desculpe, estou muito cansado e não tô raciocinando direito hoje. Imploro ao p
    <relationship id="REL76" populated="true" UUID="9544d9eb-04a1-4199-b88e-5b80910f1e2d" deferrability="5" deleteRule="3" fk-table-ref="TAB57" fkCardinality="7" identifying="true" name="empregados_historico_cargos_fk" physicalName="empregados_historico_cargos_fk" pk-table-ref="TAB33" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP77" populated="true" UUID="94d2e645-5264-4172-966a-ac0e86c52435" fk-column-ref="COL58" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL34" />
    </relationship>
-   <relationship id="REL78" populated="true" UUID="e992960c-467b-4c9b-9612-f12e7a640b29" deferrability="7" deleteRule="3" fk-table-ref="TAB33" fkCardinality="7" identifying="false" name="cargos_empregados_fk" physicalName="cargos_empregados_fk" pk-table-ref="TAB48" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP79" populated="true" UUID="27e3d5bf-1a6f-433e-951a-f722990addd1" fk-column-ref="COL39" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL49" />
+   <relationship id="REL78" populated="true" UUID="374b2d02-6b8a-4dcd-9128-297e92b285bc" deferrability="7" deleteRule="3" fk-table-ref="TAB33" fkCardinality="7" identifying="false" name="empregados_empregados_fk" physicalName="empregados_empregados_fk" pk-table-ref="TAB33" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP79" populated="true" UUID="ff58e5dc-c1f9-4445-b9ff-ba6f749451bf" fk-column-ref="COL43" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL34" />
    </relationship>
-   <relationship id="REL80" populated="true" UUID="737ad36d-2186-4806-a471-faa81041c9f8" deferrability="7" deleteRule="3" fk-table-ref="TAB57" fkCardinality="7" identifying="false" name="cargos_historico_cargos_fk" physicalName="cargos_historico_cargos_fk" pk-table-ref="TAB48" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP81" populated="true" UUID="8c26bdbe-df52-428a-9100-28b0a523ff65" fk-column-ref="COL61" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL49" />
+   <relationship id="REL80" populated="true" UUID="e992960c-467b-4c9b-9612-f12e7a640b29" deferrability="7" deleteRule="3" fk-table-ref="TAB33" fkCardinality="7" identifying="false" name="cargos_empregados_fk" physicalName="cargos_empregados_fk" pk-table-ref="TAB48" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP81" populated="true" UUID="27e3d5bf-1a6f-433e-951a-f722990addd1" fk-column-ref="COL39" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL49" />
+   </relationship>
+   <relationship id="REL82" populated="true" UUID="737ad36d-2186-4806-a471-faa81041c9f8" deferrability="7" deleteRule="3" fk-table-ref="TAB57" fkCardinality="7" identifying="false" name="cargos_historico_cargos_fk" physicalName="cargos_historico_cargos_fk" pk-table-ref="TAB48" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP83" populated="true" UUID="8c26bdbe-df52-428a-9100-28b0a523ff65" fk-column-ref="COL61" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL49" />
    </relationship>
   </relationships>
  </target-database>
@@ -266,10 +269,11 @@ Desculpe, estou muito cansado e não tô raciocinando direito hoje. Imploro ao p
   <table-link relationship-ref="REL68" pkConnection="0.6666666666666666" fkConnection="0.9148936170212766" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="33"/>
   <table-link relationship-ref="REL70" pkConnection="0.6331168831168831" fkConnection="0.42249240121580545" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="132"/>
   <table-link relationship-ref="REL72" pkConnection="0.5957446808510638" fkConnection="0.35311572700296734" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="132"/>
-  <table-link relationship-ref="REL78" pkConnection="0.39166666666666666" fkConnection="0.5528455284552846" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL80" pkConnection="0.39166666666666666" fkConnection="0.5528455284552846" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="18"/>
   <table-link relationship-ref="REL76" pkConnection="0.1016260162601626" fkConnection="0.1892744479495268" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="65"/>
-  <table-link relationship-ref="REL80" pkConnection="0.3941368078175896" fkConnection="0.5110410094637224" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL82" pkConnection="0.3941368078175896" fkConnection="0.5110410094637224" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="72"/>
   <table-link relationship-ref="REL74" pkConnection="0.30833333333333335" fkConnection="0.8865248226950354" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL78" pkConnection="0.051829268292682924" fkConnection="0.9512195121951219" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="36"/>
  </play-pen>
  <critic-manager>
   <critic-grouping platformType="Generic" enabled="true">
