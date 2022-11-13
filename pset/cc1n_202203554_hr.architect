@@ -54,7 +54,7 @@
     <index id="IDX12" populated="true" UUID="19de78d7-d7f7-433a-ab6c-82b99467d273" clustered="false" name="id_pais" physicalName="id_pais" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC13" populated="true" UUID="bf5995f0-8581-4167-a624-f68e47913bfa" ascendingOrDescending="UNSPECIFIED" column-ref="COL9" name="id_pais" physicalName="id_pais" />
     </index>
-    <index id="IDX14" populated="true" UUID="b4146ebd-4eb3-46db-8fa4-af325c97fe10" clustered="false" name="regioes_idx" physicalName="regioes_idx_1" primaryKeyIndex="false" unique="true" >
+    <index id="IDX14" populated="true" UUID="b4146ebd-4eb3-46db-8fa4-af325c97fe10" clustered="false" name="paises_idx" physicalName="paises_idx" primaryKeyIndex="false" unique="true" >
      <index-column id="IDC15" populated="true" UUID="d892b4f0-566a-447f-ac84-179a22abd074" ascendingOrDescending="UNSPECIFIED" column-ref="COL10" name="nome" physicalName="nome" />
     </index>
    </folder>
@@ -115,7 +115,7 @@
     <index id="IDX30" populated="true" UUID="93c867ee-b4af-4ec7-8dab-91fbeaec1b49" clustered="false" name="id_departamento" physicalName="id_departamento" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC31" populated="true" UUID="1934e515-4317-40eb-a1d7-0196302fb7e1" ascendingOrDescending="UNSPECIFIED" column-ref="COL26" name="id_departamento" physicalName="id_departamento" />
     </index>
-    <index id="IDX32" populated="true" UUID="80851390-15bc-43f0-9a8d-8659530d40c7" clustered="false" name="AK" physicalName="AK" primaryKeyIndex="false" unique="true" >
+    <index id="IDX32" populated="true" UUID="80851390-15bc-43f0-9a8d-8659530d40c7" clustered="false" name="AK" physicalName="ak" primaryKeyIndex="false" unique="true" >
      <index-column id="IDC33" populated="true" UUID="59e687c9-1d6e-47f3-8592-f4ac00f82a29" ascendingOrDescending="UNSPECIFIED" column-ref="COL27" name="nome" physicalName="nome" />
     </index>
    </folder>
@@ -162,7 +162,7 @@
     <index id="IDX45" populated="true" UUID="0715f89e-ee1c-49e7-9527-36c5a97b0243" clustered="false" name="id_empregado" physicalName="id_empregado" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC46" populated="true" UUID="db560115-acc7-4781-b491-22a575a39c60" ascendingOrDescending="UNSPECIFIED" column-ref="COL35" name="id_empregado" physicalName="id_empregado" />
     </index>
-    <index id="IDX47" populated="true" UUID="09aa9a5a-77dc-4ad8-b0b6-ff25e20a887b" clustered="false" name="AK" physicalName="AK_1" primaryKeyIndex="false" unique="true" >
+    <index id="IDX47" populated="true" UUID="09aa9a5a-77dc-4ad8-b0b6-ff25e20a887b" clustered="false" name="AK1" physicalName="AK1" primaryKeyIndex="false" unique="true" >
      <index-column id="IDC48" populated="true" UUID="2c0f3ae3-624b-46d5-9c0e-e236c7aa5b72" ascendingOrDescending="UNSPECIFIED" column-ref="COL37" name="email" physicalName="email" />
     </index>
    </folder>
@@ -191,7 +191,7 @@
     <index id="IDX54" populated="true" UUID="5dd284d3-a040-4b59-9c93-9a701f608410" clustered="false" name="id_cargo" physicalName="id_cargo" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC55" populated="true" UUID="a9c15eae-c61c-4c15-ba5d-92bb4202f4bc" ascendingOrDescending="UNSPECIFIED" column-ref="COL50" name="id_cargo" physicalName="id_cargo" />
     </index>
-    <index id="IDX56" populated="true" UUID="c8c76b28-34bf-4b71-8e46-a100f21ff9db" clustered="false" name="AK" physicalName="AK_2" primaryKeyIndex="false" unique="true" >
+    <index id="IDX56" populated="true" UUID="c8c76b28-34bf-4b71-8e46-a100f21ff9db" clustered="false" name="AK2" physicalName="AK2" primaryKeyIndex="false" unique="true" >
      <index-column id="IDC57" populated="true" UUID="b342d95d-8722-4074-8525-4513730c42e1" ascendingOrDescending="UNSPECIFIED" column-ref="COL51" name="cargo" physicalName="cargo" />
     </index>
    </folder>
@@ -199,7 +199,7 @@
   <table id="TAB58" populated="true" UUID="cc8f5467-569a-43cb-bc37-352d92b3f25b" name="historico_cargos" objectType="TABLE" physicalName="historico_cargos" >
    <remarks>Essa é a última tabela que estou fazendo, a de histórico de cargos. Depois de concluir, irei trabalhar em resolver alguns errinhos e garantir o funcionamento desse modelo lógico.</remarks>
    <folder id="FOLTAB581" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL59" populated="true" UUID="cd756b95-5672-4987-a23a-911988394c23" autoIncrement="false" autoIncrementSequenceName="empregados_id_empregado_seq_1" defaultValue="" name="id_empregado" nullable="0" physicalName="id_empregado" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL59" populated="true" UUID="cd756b95-5672-4987-a23a-911988394c23" autoIncrement="false" autoIncrementSequenceName="empregados_id_empregado_fk_seq_1" defaultValue="" name="id_empregado" nullable="0" physicalName="id_empregado_fk" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>o bastava o ID das regiões, países e departamentos? Bem, acho que ID de empregados é bem mais comum, na verdade.</remarks>
     </column>
     <column id="COL60" populated="true" UUID="7989a4b9-4b01-4108-88d6-0821823b61ac" autoIncrement="false" autoIncrementSequenceName="historico_cargos_data_inicial_seq" defaultValue="" name="data_inicial" nullable="0" physicalName="data_inicial" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
@@ -221,7 +221,7 @@
     </folder>
     <folder id="FOLTAB584" populated="true" name="Indices" physicalName="Indices" type="4">
     <index id="IDX64" populated="true" UUID="5c742bdc-d33f-436d-9d8b-40561f1549d4" clustered="false" name="data inicial" physicalName="data_inicial" primaryKeyIndex="true" unique="false" >
-     <index-column id="IDC65" populated="true" UUID="b2966abf-2237-46f7-95ea-4ce88104df59" ascendingOrDescending="UNSPECIFIED" column-ref="COL59" name="id_empregado" physicalName="id_empregado" />
+     <index-column id="IDC65" populated="true" UUID="b2966abf-2237-46f7-95ea-4ce88104df59" ascendingOrDescending="UNSPECIFIED" column-ref="COL59" name="id_empregado" physicalName="id_empregado_fk" />
      <index-column id="IDC66" populated="true" UUID="866f500a-ac9e-4f1c-85e8-8a95c2c1f6fc" ascendingOrDescending="UNSPECIFIED" column-ref="COL60" name="data_inicial" physicalName="data_inicial" />
     </index>
    </folder>
@@ -259,7 +259,7 @@
    </relationship>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.MySqlDDLGenerator" allow-connection="true"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="true" target-schema="hr"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
  <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
