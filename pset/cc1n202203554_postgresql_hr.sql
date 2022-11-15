@@ -1,4 +1,4 @@
-
+-- Os comandos a seguir criam as tabelas e colunas do modelo lógico HR, com base no esquema HR.
 CREATE TABLE hr.cargos (
                 id_cargo VARCHAR(10) NOT NULL,
                 cargo VARCHAR(35) NOT NULL,
@@ -105,7 +105,7 @@ COMMENT ON COLUMN hr.empregados.id_departamento IS 'o ID de Departamento. Eu nã
 COMMENT ON COLUMN hr.empregados.id_supervisor IS 'se relaciona com a própria tabela. Tive dificuldades de entender como fazer isso, então tirei algumas dúvidas com colegas.';
 
 
-CREATE UNIQUE INDEX ak2
+CREATE UNIQUE INDEX ak2 --Aqui temos um index que me ajuda a identificar a Alternate key.
  ON hr.empregados
  ( email );
 
@@ -123,6 +123,10 @@ COMMENT ON COLUMN hr.historico_cargos.data_inicial IS 'Essa aqui é a data inici
 COMMENT ON COLUMN hr.historico_cargos.data_final IS 'ta final de entrega desse Pset é dia 15! Preciso me apressar.';
 COMMENT ON COLUMN hr.historico_cargos.id_cargo IS 'ê ID pra tudo?';
 COMMENT ON COLUMN hr.historico_cargos.id_departamento IS 'o ID de Departamento. Eu não tinha ideia que Departamentos precisavam de IDs. Não é mais fácil só identificar pelo nome do departamento?';
+
+/*Seguindo agora, temos os inserts de todos os valores das tabelas.
+ * O primeiro deles é o de regiões, das quais temos apenas 4.
+ */
 
 INSERT INTO regioes VALUES 
         ( 1
@@ -144,6 +148,9 @@ INSERT INTO regioes VALUES
         , 'Middle East and Africa' 
         );
 
+       /*A seguir temos os inserts dos diversos países,
+        * incluindo seus nomes (em inglês) e ID.
+        */
 
 INSERT INTO paises VALUES 
         ( 'IT'
@@ -295,6 +302,11 @@ INSERT INTO paises VALUES
         , 1 
         );
 
+       /*Estes Inserts que seguem aqui
+        * se tratam das localizações onde,
+        * eu assumo, estejam as filiais das empresas.
+        */
+       
        INSERT INTO localizacoes VALUES 
         ( 1000 
         , '1297 Via Cola di Rie'
@@ -502,6 +514,11 @@ INSERT INTO localizacoes VALUES
         , 'MX'
         );
        
+       /*Os Inserts a seguir adicionam
+        * os valores dos Departamentos da empresa,
+        * seus IDs e etc.
+        */
+       
        INSERT INTO departamentos VALUES 
         ( 10
         , 'Administration'
@@ -691,6 +708,11 @@ INSERT INTO departamentos VALUES
         , 1700
         );
        
+       /*Os inserts a seguir se tratam dos registros
+        * pertinentes a tabela de cargos, incluindo
+        * o ID do cargo, salário mín/máx, etc.
+        */
+       
        INSERT INTO cargos VALUES 
         ( 'AD_PRES'
         , 'President'
@@ -820,6 +842,13 @@ INSERT INTO cargos VALUES
         , 4500
         , 10500
         );
+       
+       /*Essa gigantesca série de Inserts a seguir
+        * inserem os registros dos funcionários,
+        * da tabela empregados. Tive de alterar o
+        * script diversas vezes para lidar com os 
+        * valores ''null'' dos inserts a seguir.
+        */
 
        INSERT INTO empregados VALUES 
         ( 100
@@ -2212,6 +2241,10 @@ INSERT INTO empregados VALUES
         , 110
         );
        
+       /*Os próximos inserts inserem as informações
+        * pertinentes a tabela do histórico de cargos.
+        */
+       
        INSERT INTO historico_cargos
 VALUES (102
        , TO_DATE('13-01-2001', 'dd-MM-yyyy')
@@ -2288,6 +2321,12 @@ VALUES  (200
         , 90
         );
        
+       /*Aqui seguem os comandos para adicionar as constraints, que definem
+        * as chaves estrangeiras e as restrições do projeto. A razão deles
+        * estarem no final do script, é para não conflitar com os comandos
+        * Insert já estabelecidos.
+        */
+       
        ALTER TABLE hr.empregados ADD CONSTRAINT cargos_empregados_fk
 FOREIGN KEY (id_cargo)
 REFERENCES hr.cargos (id_cargo)
@@ -2316,13 +2355,6 @@ ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
-ALTER TABLE hr.departamentos ADD CONSTRAINT localizacoes_departamentos_fk
-FOREIGN KEY (id_localizacao)
-REFERENCES hr.localizacoes (id_localizacao)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
-
 ALTER TABLE hr.historico_cargos ADD CONSTRAINT departamentos_historico_cargos_fk
 FOREIGN KEY (id_departamento)
 REFERENCES hr.departamentos (id_departamento)
@@ -2337,26 +2369,7 @@ ON DELETE NO ACTION
 ON UPDATE NO ACTION
 DEFERRABLE INITIALLY DEFERRED;
 
-ALTER TABLE hr.empregados ADD CONSTRAINT empregados_empregados_fk
-FOREIGN KEY (id_supervisor)
-REFERENCES hr.empregados (id_empregado)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
 
-ALTER TABLE hr.departamentos ADD CONSTRAINT empregados_departamentos_fk
-FOREIGN KEY (id_gerente)
-REFERENCES hr.empregados (id_empregado)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
-
-ALTER TABLE hr.empregados ADD CONSTRAINT departamentos_empregados_fk
-FOREIGN KEY (id_departamento)
-REFERENCES hr.departamentos (id_departamento)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
 
 
 

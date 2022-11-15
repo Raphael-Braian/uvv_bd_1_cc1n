@@ -11,13 +11,13 @@
  </source-databases>
  <target-database id="ppdb" dbcs-ref="DS0">
   <table id="TAB1" populated="true" UUID="df310129-ae7e-47b0-88e9-9a991cb22088" name="regioes" objectType="TABLE" physicalName="regioes" >
-   <remarks>Essa é a tabela de regiões. É a primeira tabela que eu decidi recriar no SQL Power Architect, não só por ser uma das mais simples do projeto, como por se conectar com apenas outra tabela através de uma PK, a tabela países.</remarks>
+   <remarks>Tabela de regiões.</remarks>
    <folder id="FOLTAB11" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL2" populated="true" UUID="ad29dde8-8a00-45b0-85d4-731901270f2c" autoIncrement="false" autoIncrementSequenceName="regioes_id_regiao_seq" defaultValue="" name="id_regiao" nullable="0" physicalName="id_regiao" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks>não conhecia o propósito. É como um DDD de celular? Tive de pesquisar para entender melhor.</remarks>
+     <remarks>Id de região. Primary key.</remarks>
     </column>
     <column id="COL3" populated="true" UUID="c357ab02-7c01-4e14-961c-37e6ceec62ac" autoIncrement="false" autoIncrementSequenceName="regioes_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="25" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks>arte foi descobrir como limitar a quantidade de Varchar para 25.</remarks>
+     <remarks>Campo de Nomes. Alternate Key.</remarks>
     </column>
     </folder>
     <folder id="FOLTAB13" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
@@ -34,16 +34,16 @@
    </folder>
   </table>
   <table id="TAB8" populated="true" UUID="6ca3aa50-34f3-4cf5-88ad-82fe6299f37d" name="paises" objectType="TABLE" physicalName="paises" >
-   <remarks>Segunda tabela criada. O desafio na primeira foi identificar a Alternate Key. O desafio nessa vai ser conectar à Primary Key com a Foreign Key. Vou descobrir!</remarks>
+   <remarks>Tabela de países.</remarks>
    <folder id="FOLTAB81" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL9" populated="true" UUID="522e4095-94b9-4ae4-bfb8-bc9291cee5bf" autoIncrement="false" autoIncrementSequenceName="paises_id_pais_seq" defaultValue="" name="id_pais" nullable="0" physicalName="id_pais" precision="2" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
-     <remarks>País da terceira tabela, de Localizações. Como eu vou criar esse relacionamento, só Deus sabe.</remarks>
+     <remarks>ID dos países. Primary Key.</remarks>
     </column>
     <column id="COL10" populated="true" UUID="234866f1-a68a-4e54-ba76-fca66945a622" autoIncrement="false" autoIncrementSequenceName="paises_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks>a portadora da Alternate Key dentre esses campos.</remarks>
+     <remarks>Nome dos países. Alternate Key.</remarks>
     </column>
     <column id="COL11" populated="true" UUID="4cd20b83-59da-4aa3-8334-6745b106b7f4" autoIncrement="false" autoIncrementSequenceName="paises_id_regiao_seq" defaultValue="" name="id_regiao" nullable="0" physicalName="id_regiao" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks>tamente é um &apos;&apos;ID de região&apos;&apos;. Entendo que é um número, mas não conhecia o propósito. É como um DDD de celular? Tive de pesquisar para entender melhor.</remarks>
+     <remarks>ID das regiões. Foreign Key de Localizações.</remarks>
     </column>
     </folder>
     <folder id="FOLTAB83" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
@@ -60,25 +60,25 @@
    </folder>
   </table>
   <table id="TAB16" populated="true" UUID="affa7d6a-f252-41c4-8113-2163652769ba" name="localizacoes" objectType="TABLE" physicalName="localizacoes" >
-   <remarks>Essa é a terceira tabela com a qual vamos trabalhar, a tabela de localizações. Ela deve se conectar tanto com a tabela de regiões, quanto com a tabela de departamentos. Então deve se mostrar como um desafio interessante.</remarks>
+   <remarks>Tabela das localizações.</remarks>
    <folder id="FOLTAB161" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL17" populated="true" UUID="a87356f2-9b0e-48c4-82b5-07a4dc876104" autoIncrement="false" autoIncrementSequenceName="localizacoes_id_localizacao_seq" defaultValue="" name="id_localizacao" nullable="0" physicalName="id_localizacao" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks>como todos esses IDs funcionam, pra ser sincero. Esse campo atua como a Primary Key que se relaciona com a tabela de departamentos.</remarks>
+     <remarks>ID de localização. Primary Key.</remarks>
     </column>
     <column id="COL18" populated="true" UUID="f161ec55-9236-46d9-8748-6c91c8412744" autoIncrement="false" autoIncrementSequenceName="localizacoes_endereco_seq" defaultValue="" name="endereco" nullable="1" physicalName="endereco" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks>Campo para escrita do endereço.</remarks>
+     <remarks>Campo de endereço.</remarks>
     </column>
     <column id="COL19" populated="true" UUID="e1a4c071-64b9-455b-a139-fd083185f62d" autoIncrement="false" autoIncrementSequenceName="localizacoes_cep_seq" defaultValue="" name="cep" nullable="1" physicalName="cep" precision="12" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks>que comentar.</remarks>
+     <remarks>Campo de CEP</remarks>
     </column>
     <column id="COL20" populated="true" UUID="fbefb17d-a7cd-438d-8816-94e0ea9efa6f" autoIncrement="false" autoIncrementSequenceName="localizacoes_cidade_seq" defaultValue="" name="cidade" nullable="1" physicalName="cidade" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks>localizados. Cara, eu queria viver em uma cidade maneira como Shibuya no Japão. As cidades do Brasil são tão caídas</remarks>
+     <remarks>Campo das cidades.</remarks>
     </column>
     <column id="COL21" populated="true" UUID="03af229a-7f13-445e-9b5a-f50fc2e59f0f" autoIncrement="false" autoIncrementSequenceName="localizacoes_uf_seq" defaultValue="" name="uf" nullable="1" physicalName="uf" precision="25" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks>u muito cansado e não tô raciocinando direito hoje. Imploro ao professor Abrantes, em sua infinita sabedoria e misericórdia, que não reduza minha nota por causa dessas anotações bestas.</remarks>
+     <remarks>Campo das unidades federativas.</remarks>
     </column>
-    <column id="COL22" populated="true" UUID="fa8fd24f-555c-4a96-8a36-80a7b252739c" autoIncrement="false" autoIncrementSequenceName="regioes_id_pais_seq_1" defaultValue="" name="id_pais" nullable="0" physicalName="id_pais" precision="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
-     <remarks>País da terceira tabela, de Localizações. Como eu vou criar esse relacionamento, só Deus sabe.</remarks>
+    <column id="COL22" populated="true" UUID="fa8fd24f-555c-4a96-8a36-80a7b252739c" autoIncrement="false" autoIncrementSequenceName="localizacoes_id_pais_seq" defaultValue="" name="id_pais" nullable="0" physicalName="id_pais" precision="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+     <remarks>Id dos países. Foreign Key.</remarks>
     </column>
     </folder>
     <folder id="FOLTAB163" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
@@ -92,19 +92,19 @@
    </folder>
   </table>
   <table id="TAB25" populated="true" UUID="4042026a-b30c-4f1a-bc09-0d58a82d57b9" name="departamentos" objectType="TABLE" physicalName="departamentos" >
-   <remarks>Essa é a quarta tabela que eu recriei. Também é a primeira que eu pinto de uma cor diferente. A tabela departamento reúne campos que se conectam mais com outras tabelas, como o Id de Localização e o Id Gerente. Sua Primary Key é a Id de Departamento</remarks>
+   <remarks>Tabela de departamentos.</remarks>
    <folder id="FOLTAB251" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL26" populated="true" UUID="6e83da8d-2b30-4d82-a9df-83c20d270377" autoIncrement="false" autoIncrementSequenceName="departamentos_id_departamento_seq" defaultValue="" name="id_departamento" nullable="0" physicalName="id_departamento" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks>o ID de Departamento. Eu não tinha ideia que Departamentos precisavam de IDs. Não é mais fácil só identificar pelo nome do departamento?</remarks>
+     <remarks>ID dos departamentos.</remarks>
     </column>
     <column id="COL27" populated="true" UUID="d9af2489-224a-4ad4-b643-4352dd74a825" autoIncrement="false" autoIncrementSequenceName="departamentos_nome_seq" defaultValue="" name="nome" nullable="1" physicalName="nome" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks>mes legais, tipo &apos;&apos;Processamento de Macrodados&apos;&apos;. Ei professor, se estiver lendo isso, dê uma olhada em uma série chamada &apos;&apos;Ruptura&apos;&apos;, da Apple. Acho que vai gostar</remarks>
+     <remarks>Nome dos Departamentos. Alternate Key.</remarks>
     </column>
-    <column id="COL28" populated="true" UUID="e52ee486-d2db-454f-a0ce-b117340eaa7e" autoIncrement="false" autoIncrementSequenceName="localizacoes_id_localizacao_seq_1" defaultValue="" name="id_localizacao" nullable="0" physicalName="id_localizacao" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks>como todos esses IDs funcionam, pra ser sincero. Esse campo atua como a Primary Key que se relaciona com a tabela de departamentos.</remarks>
+    <column id="COL28" populated="true" UUID="e52ee486-d2db-454f-a0ce-b117340eaa7e" autoIncrement="false" autoIncrementSequenceName="departamentos_id_localizacao_seq" defaultValue="" name="id_localizacao" nullable="0" physicalName="id_localizacao" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>ID de localização. Foreign Key.</remarks>
     </column>
-    <column id="COL29" populated="true" UUID="5c695439-1737-49fb-8eea-7dce4f15b15a" autoIncrement="false" autoIncrementSequenceName="empregados_id_gerente_seq" defaultValue="" name="id_gerente" nullable="0" physicalName="id_gerente" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks>o bastava o ID das regiões, países e departamentos? Bem, acho que ID de empregados é bem mais comum, na verdade.</remarks>
+    <column id="COL29" populated="true" UUID="5c695439-1737-49fb-8eea-7dce4f15b15a" autoIncrement="false" autoIncrementSequenceName="departamentos_id_gerente_seq" defaultValue="" name="id_gerente" nullable="0" physicalName="id_gerente" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>ID de gerente. Foreign Key.</remarks>
     </column>
     </folder>
     <folder id="FOLTAB253" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
@@ -121,37 +121,37 @@
    </folder>
   </table>
   <table id="TAB34" populated="true" UUID="882cadaa-10ab-4be1-abc9-8441cbcf498a" name="empregados" objectType="TABLE" physicalName="empregados" >
-   <remarks>tos? Seria isso um erro (?)</remarks>
+   <remarks>Tabela dos Empregados.</remarks>
    <folder id="FOLTAB341" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL35" populated="true" UUID="f3ab4bd6-0523-4e33-b9a2-6d46e43ca80f" autoIncrement="false" autoIncrementSequenceName="empregados_id_empregado_seq" defaultValue="" name="id_empregado" nullable="0" physicalName="id_empregado" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks>o bastava o ID das regiões, países e departamentos? Bem, acho que ID de empregados é bem mais comum, na verdade.</remarks>
+     <remarks>ID dos empregados. Primary Key.</remarks>
     </column>
     <column id="COL36" populated="true" UUID="79750c03-88b6-4256-82ed-b92f2ef05856" autoIncrement="false" autoIncrementSequenceName="empregados_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="75" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks>O nome dos empregados. O meu seria &apos;&apos;Raphael Braian C.&apos;&apos;</remarks>
+     <remarks>O nome dos empregados.</remarks>
     </column>
     <column id="COL37" populated="true" UUID="816d6e34-b5a3-494e-88c3-5ea553b0e2ab" autoIncrement="false" autoIncrementSequenceName="empregados_email_seq" defaultValue="" name="email" nullable="0" physicalName="email" precision="35" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks>m trabalhar com Banco de Dados se você estiver solteiro. Tem alguma moça bonita no escritório e você quer o e-mail dela? Só olhar diretamente aqui, nem precisa perguntar.</remarks>
+     <remarks>E-mail dos empregados. Alternate Key.</remarks>
     </column>
     <column id="COL38" populated="true" UUID="5c694a4d-abf2-4ab0-91e6-b6aded927182" autoIncrement="false" autoIncrementSequenceName="empregados_telefone_seq" defaultValue="" name="telefone" nullable="1" physicalName="telefone" precision="20" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks>har aqui, precisa resistir à tentação de fazer trotes constantes nos seus colegas de trabalho.</remarks>
+     <remarks>Telefone dos empregados.</remarks>
     </column>
     <column id="COL39" populated="true" UUID="348110c3-12a6-4c6e-8b80-7d23d2b24788" autoIncrement="false" autoIncrementSequenceName="empregados_data_contratacao_seq" defaultValue="" name="data_contratacao" nullable="0" physicalName="data_contratacao" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
-     <remarks>uncionário. Caso você precise fazer uma festa de aniversário de contratação surpresa. Na verdade, isso nem sequer existe, não é? Mas seria divertido.</remarks>
+     <remarks>Data de contratação.</remarks>
     </column>
-    <column id="COL40" populated="true" UUID="23dd5b65-39fd-4215-80c1-77bd5c861117" autoIncrement="false" autoIncrementSequenceName="cargos_id_cargo_seq" defaultValue="" name="id_cargo" nullable="0" physicalName="id_cargo" precision="10" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks>ê ID pra tudo?</remarks>
+    <column id="COL40" populated="true" UUID="23dd5b65-39fd-4215-80c1-77bd5c861117" autoIncrement="false" autoIncrementSequenceName="empregados_id_cargo_seq" defaultValue="" name="id_cargo" nullable="0" physicalName="id_cargo" precision="10" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>ID dos cargos. Foreign Key.</remarks>
     </column>
     <column id="COL41" populated="true" UUID="5396b567-d806-4a3d-aa0d-2ad58fdd3e40" autoIncrement="false" autoIncrementSequenceName="empregados_salario_seq" defaultValue="" name="salario" nullable="1" physicalName="salario" precision="8" referenceCount="1" scale="2" sourceDataTypeName="UserDefinedSQLType" type="3" userDefinedTypeUUID="cc1304ea-628a-4fc5-a84a-06ba14759152" >
-     <remarks>amenta de exploração que existe, e ao mesmo tempo, a fonte da nossa felicidade.</remarks>
+     <remarks>Salário. Não muito alto.</remarks>
     </column>
     <column id="COL42" populated="true" UUID="6b23fa3b-3fe9-4980-8eed-8a9ef78a8790" autoIncrement="false" autoIncrementSequenceName="empregados_comissao_seq" defaultValue="" name="comissao" nullable="1" physicalName="comissao" precision="4" referenceCount="1" scale="2" sourceDataTypeName="UserDefinedSQLType" type="3" userDefinedTypeUUID="cc1304ea-628a-4fc5-a84a-06ba14759152" >
-     <remarks>Uma comissão em dinheiro à ser paga.</remarks>
+     <remarks>Comissão dos empregados.</remarks>
     </column>
-    <column id="COL43" populated="true" UUID="5f9e5b03-f744-4552-83c6-d6eb3bb9c070" autoIncrement="false" autoIncrementSequenceName="departamentos_id_departamento_seq_1" defaultValue="" name="id_departamento" nullable="0" physicalName="id_departamento" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks>o ID de Departamento. Eu não tinha ideia que Departamentos precisavam de IDs. Não é mais fácil só identificar pelo nome do departamento?</remarks>
+    <column id="COL43" populated="true" UUID="5f9e5b03-f744-4552-83c6-d6eb3bb9c070" autoIncrement="false" autoIncrementSequenceName="empregados_id_departamento_seq" defaultValue="" name="id_departamento" nullable="0" physicalName="id_departamento" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>o ID de Departamento. Foreign Key.</remarks>
     </column>
     <column id="COL44" populated="true" UUID="1840b0a6-c0ca-4cbe-8ad3-fe6a1029f3c1" autoIncrement="false" autoIncrementSequenceName="empregados_id_empregado_seq_1" defaultValue="" name="id_supervisor" nullable="0" physicalName="id_supervisor" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks>se relaciona com a própria tabela. Tive dificuldades de entender como fazer isso, então tirei algumas dúvidas com colegas.</remarks>
+     <remarks>ID do supervisor. Foreign Key.</remarks>
     </column>
     </folder>
     <folder id="FOLTAB343" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
@@ -162,25 +162,25 @@
     <index id="IDX45" populated="true" UUID="0715f89e-ee1c-49e7-9527-36c5a97b0243" clustered="false" name="id_empregado" physicalName="id_empregado" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC46" populated="true" UUID="db560115-acc7-4781-b491-22a575a39c60" ascendingOrDescending="UNSPECIFIED" column-ref="COL35" name="id_empregado" physicalName="id_empregado" />
     </index>
-    <index id="IDX47" populated="true" UUID="09aa9a5a-77dc-4ad8-b0b6-ff25e20a887b" clustered="false" name="AK1" physicalName="AK1" primaryKeyIndex="false" unique="true" >
+    <index id="IDX47" populated="true" UUID="09aa9a5a-77dc-4ad8-b0b6-ff25e20a887b" clustered="false" name="AK1" physicalName="ak1" primaryKeyIndex="false" unique="true" >
      <index-column id="IDC48" populated="true" UUID="2c0f3ae3-624b-46d5-9c0e-e236c7aa5b72" ascendingOrDescending="UNSPECIFIED" column-ref="COL37" name="email" physicalName="email" />
     </index>
    </folder>
   </table>
   <table id="TAB49" populated="true" UUID="c9c41ddd-5614-4b1e-b7cc-b30187e13c02" name="cargos" objectType="TABLE" physicalName="cargos" >
-   <remarks>Agora vamos para a tabela dos cargos. Isso me faz questionar que tipo de empresa é essa? Nunca é deixado claro. Acho que esse sistema de banco de dados pode ser útil para várias empresas, sem especificidade. Prático.</remarks>
+   <remarks>Tabela dos cargos.</remarks>
    <folder id="FOLTAB491" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL50" populated="true" UUID="178cb49d-67e8-4a69-9592-c3ca2b66fe3c" autoIncrement="false" autoIncrementSequenceName="cargos_id_cargo_seq_1" defaultValue="" name="id_cargo" nullable="0" physicalName="id_cargo" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks>ê ID pra tudo?</remarks>
+    <column id="COL50" populated="true" UUID="178cb49d-67e8-4a69-9592-c3ca2b66fe3c" autoIncrement="false" autoIncrementSequenceName="cargos_id_cargo_seq" defaultValue="" name="id_cargo" nullable="0" physicalName="id_cargo" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>ID dos cargos. Primary Key.</remarks>
     </column>
     <column id="COL51" populated="true" UUID="b857a249-0325-42bf-b822-48ca9c34805e" autoIncrement="false" autoIncrementSequenceName="cargos_cargo_seq" defaultValue="" name="cargo" nullable="0" physicalName="cargo" precision="35" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks>trado aqui?</remarks>
+     <remarks>Cargo. Alternate Key.</remarks>
     </column>
     <column id="COL52" populated="true" UUID="7804e433-401f-4e04-b566-839df7ad6a31" autoIncrement="false" autoIncrementSequenceName="cargos_salario_minimo_seq" defaultValue="" name="salario_minimo" nullable="1" physicalName="salario_minimo" precision="8" referenceCount="1" scale="2" sourceDataTypeName="UserDefinedSQLType" type="3" userDefinedTypeUUID="cc1304ea-628a-4fc5-a84a-06ba14759152" >
      <remarks>Tô na universidade pra fugir disso aqui.</remarks>
     </column>
     <column id="COL53" populated="true" UUID="b8ec8e22-52a0-498c-89d7-db901be68e15" autoIncrement="false" autoIncrementSequenceName="cargos_salario_maximo_seq" defaultValue="" name="salario_maximo" nullable="1" physicalName="salario_maximo" precision="8" referenceCount="1" scale="2" sourceDataTypeName="UserDefinedSQLType" type="3" userDefinedTypeUUID="cc1304ea-628a-4fc5-a84a-06ba14759152" >
-     <remarks>do mundo? Quem é a pessoa que, exercendo uma profissão, fatura mais no mundo inteiro? Devo lembrar de pesquisar no Google depois.</remarks>
+     <remarks>Salário máximo.</remarks>
     </column>
     </folder>
     <folder id="FOLTAB493" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
@@ -191,28 +191,28 @@
     <index id="IDX54" populated="true" UUID="5dd284d3-a040-4b59-9c93-9a701f608410" clustered="false" name="id_cargo" physicalName="id_cargo" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC55" populated="true" UUID="a9c15eae-c61c-4c15-ba5d-92bb4202f4bc" ascendingOrDescending="UNSPECIFIED" column-ref="COL50" name="id_cargo" physicalName="id_cargo" />
     </index>
-    <index id="IDX56" populated="true" UUID="c8c76b28-34bf-4b71-8e46-a100f21ff9db" clustered="false" name="AK2" physicalName="AK2" primaryKeyIndex="false" unique="true" >
+    <index id="IDX56" populated="true" UUID="c8c76b28-34bf-4b71-8e46-a100f21ff9db" clustered="false" name="AK2" physicalName="ak2" primaryKeyIndex="false" unique="true" >
      <index-column id="IDC57" populated="true" UUID="b342d95d-8722-4074-8525-4513730c42e1" ascendingOrDescending="UNSPECIFIED" column-ref="COL51" name="cargo" physicalName="cargo" />
     </index>
    </folder>
   </table>
   <table id="TAB58" populated="true" UUID="cc8f5467-569a-43cb-bc37-352d92b3f25b" name="historico_cargos" objectType="TABLE" physicalName="historico_cargos" >
-   <remarks>Essa é a última tabela que estou fazendo, a de histórico de cargos. Depois de concluir, irei trabalhar em resolver alguns errinhos e garantir o funcionamento desse modelo lógico.</remarks>
+   <remarks>Tabela de histórico de cargos.</remarks>
    <folder id="FOLTAB581" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL59" populated="true" UUID="cd756b95-5672-4987-a23a-911988394c23" autoIncrement="false" autoIncrementSequenceName="empregados_id_empregado_fk_seq_1" defaultValue="" name="id_empregado" nullable="0" physicalName="id_empregado_fk" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks>o bastava o ID das regiões, países e departamentos? Bem, acho que ID de empregados é bem mais comum, na verdade.</remarks>
+    <column id="COL59" populated="true" UUID="cd756b95-5672-4987-a23a-911988394c23" autoIncrement="false" autoIncrementSequenceName="historico_cargos_id_empregado_fk_seq" defaultValue="" name="id_empregado" nullable="0" physicalName="id_empregado_fk" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>ID dos empregados. Única primary-foreign key.</remarks>
     </column>
     <column id="COL60" populated="true" UUID="7989a4b9-4b01-4108-88d6-0821823b61ac" autoIncrement="false" autoIncrementSequenceName="historico_cargos_data_inicial_seq" defaultValue="" name="data_inicial" nullable="0" physicalName="data_inicial" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
-     <remarks>Essa aqui é a data inicial do histórico de cargos.</remarks>
+     <remarks>Data inicial. Primary Key</remarks>
     </column>
     <column id="COL61" populated="true" UUID="a92bcba4-c478-43db-89b2-212cabfc395d" autoIncrement="false" autoIncrementSequenceName="historico_cargos_data_final_seq" defaultValue="" name="data_final" nullable="0" physicalName="data_final" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
-     <remarks>ta final de entrega desse Pset é dia 15! Preciso me apressar.</remarks>
+     <remarks>Data final.</remarks>
     </column>
-    <column id="COL62" populated="true" UUID="998181f2-8b88-41c9-8d90-c5d83fb6b398" autoIncrement="false" autoIncrementSequenceName="cargos_id_cargo_seq_2" defaultValue="" name="id_cargo" nullable="0" physicalName="id_cargo" precision="10" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks>ê ID pra tudo?</remarks>
+    <column id="COL62" populated="true" UUID="998181f2-8b88-41c9-8d90-c5d83fb6b398" autoIncrement="false" autoIncrementSequenceName="historico_cargos_id_cargo_seq" defaultValue="" name="id_cargo" nullable="0" physicalName="id_cargo" precision="10" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>ID dos cargos. Foreign Key.</remarks>
     </column>
-    <column id="COL63" populated="true" UUID="22e19080-f545-4d42-930b-ff787252dd5d" autoIncrement="false" autoIncrementSequenceName="departamentos_id_departamento_seq_2" defaultValue="" name="id_departamento" nullable="0" physicalName="id_departamento" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks>o ID de Departamento. Eu não tinha ideia que Departamentos precisavam de IDs. Não é mais fácil só identificar pelo nome do departamento?</remarks>
+    <column id="COL63" populated="true" UUID="22e19080-f545-4d42-930b-ff787252dd5d" autoIncrement="false" autoIncrementSequenceName="historico_cargos_id_departamento_seq" defaultValue="" name="id_departamento" nullable="0" physicalName="id_departamento" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>ID dos Departamentos. Foreign Key.</remarks>
     </column>
     </folder>
     <folder id="FOLTAB583" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
@@ -221,7 +221,7 @@
     </folder>
     <folder id="FOLTAB584" populated="true" name="Indices" physicalName="Indices" type="4">
     <index id="IDX64" populated="true" UUID="5c742bdc-d33f-436d-9d8b-40561f1549d4" clustered="false" name="data inicial" physicalName="data_inicial" primaryKeyIndex="true" unique="false" >
-     <index-column id="IDC65" populated="true" UUID="b2966abf-2237-46f7-95ea-4ce88104df59" ascendingOrDescending="UNSPECIFIED" column-ref="COL59" name="id_empregado" physicalName="id_empregado_fk" />
+     <index-column id="IDC65" populated="true" UUID="604a8866-d5cc-4e5a-ba3f-3568504879de" ascendingOrDescending="UNSPECIFIED" column-ref="COL59" name="id_empregado" physicalName="id_empregado_fk" />
      <index-column id="IDC66" populated="true" UUID="866f500a-ac9e-4f1c-85e8-8a95c2c1f6fc" ascendingOrDescending="UNSPECIFIED" column-ref="COL60" name="data_inicial" physicalName="data_inicial" />
     </index>
    </folder>
@@ -242,8 +242,8 @@
    <relationship id="REL75" populated="true" UUID="6728d586-2dc4-4b80-b87b-748ad9335c54" deferrability="7" deleteRule="3" fk-table-ref="TAB58" fkCardinality="7" identifying="false" name="departamentos_historico_cargos_fk" physicalName="departamentos_historico_cargos_fk" pk-table-ref="TAB25" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP76" populated="true" UUID="d6d495f4-ce47-417a-bcf6-d2f672f2c8eb" fk-column-ref="COL63" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL26" />
    </relationship>
-   <relationship id="REL77" populated="true" UUID="9544d9eb-04a1-4199-b88e-5b80910f1e2d" deferrability="5" deleteRule="3" fk-table-ref="TAB58" fkCardinality="7" identifying="true" name="empregados_historico_cargos_fk" physicalName="empregados_historico_cargos_fk" pk-table-ref="TAB34" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP78" populated="true" UUID="8e59621b-3aed-46f2-b91b-b16702e47013" fk-column-ref="COL59" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL35" />
+   <relationship id="REL77" populated="true" UUID="9544d9eb-04a1-4199-b88e-5b80910f1e2d" deferrability="7" deleteRule="3" fk-table-ref="TAB58" fkCardinality="7" identifying="true" name="empregados_historico_cargos_fk" physicalName="empregados_historico_cargos_fk" pk-table-ref="TAB34" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP78" populated="true" UUID="54dae374-cf43-4a1e-ab2c-0f7ea99e26b9" fk-column-ref="COL59" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL35" />
    </relationship>
    <relationship id="REL79" populated="true" UUID="374b2d02-6b8a-4dcd-9128-297e92b285bc" deferrability="7" deleteRule="3" fk-table-ref="TAB34" fkCardinality="7" identifying="false" name="empregados_empregados_fk" physicalName="empregados_empregados_fk" pk-table-ref="TAB34" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP80" populated="true" UUID="ff58e5dc-c1f9-4445-b9ff-ba6f749451bf" fk-column-ref="COL44" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL35" />
@@ -259,7 +259,7 @@
    </relationship>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="true" target-schema="hr"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.MySqlDDLGenerator" allow-connection="true"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
  <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
