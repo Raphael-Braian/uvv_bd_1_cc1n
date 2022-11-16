@@ -101,7 +101,7 @@ CREATE TABLE departamentos (
                 id_departamento INT NOT NULL,
                 nome VARCHAR(50) NOT NULL,
                 id_localizacao INT NOT NULL,
-                id_supervisor INT,
+                id_gerente INT,
                 PRIMARY KEY (id_departamento)
 );
 
@@ -1286,69 +1286,57 @@ VALUES  ( 200
        
        -- Aqui seguem as constraints para foreign keys, que relacionam as diversas tabelas do projeto.
 
- ALTER TABLE hr.empregados ADD CONSTRAINT cargos_empregados_fk
+ ALTER TABLE hr.empregados ADD CONSTRAINT cargos_empregados_fk -- Adiciona a Foreign Key Id Cargo, que referencia a tabela cargos.
 FOREIGN KEY (id_cargo)
-REFERENCES hr.cargos (id_cargo)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES cargos (id_cargo)
+;
 
-ALTER TABLE hr.historico_cargos ADD CONSTRAINT cargos_historico_cargos_fk
+ALTER TABLE hr.historico_cargos ADD CONSTRAINT cargos_historico_cargos_fk -- Adiciona a foreign key id cargo, que referencia a tabela cargos. (Em histórico cargos)
 FOREIGN KEY (id_cargo)
-REFERENCES hr.cargos (id_cargo)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES cargos (id_cargo)
+;
 
-ALTER TABLE paises ADD CONSTRAINT regioes_paises_fk
+ALTER TABLE paises ADD CONSTRAINT regioes_paises_fk -- Adiciona a foreign key id região na tabela países, que referencia a tabela regiões.
 FOREIGN KEY (id_regiao)
 REFERENCES regioes (id_regiao)
-NOT DEFERRABLE;
+;
 
-ALTER TABLE hr.paises ADD CONSTRAINT regions_regioes_fk
-FOREIGN KEY (id_regiao)
-REFERENCES hr.regioes (id_regiao)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
-
-ALTER TABLE localizacoes ADD CONSTRAINT paises_localizacoes_fk 
+ALTER TABLE localizacoes ADD CONSTRAINT paises_localizacoes_fk -- Adiciona a foreign key id país na tabela localizações, que se relaciona com a tabela países.
 FOREIGN KEY (id_pais)
 REFERENCES paises (id_pais)
-NOT DEFERRABLE;
+;
 
-ALTER TABLE hr.localizacoes ADD CONSTRAINT regioes_localizacoes_fk
+ALTER TABLE hr.localizacoes ADD CONSTRAINT regioes_localizacoes_fk -- Adiciona a foreign key id país na tabela localizações, que se relaciona com a tabela de regiões.
 FOREIGN KEY (id_pais)
-REFERENCES hr.paises (id_pais)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES paises (id_pais)
+;
 
-ALTER TABLE empregados ADD CONSTRAINT empregados_empregados_fk 
+ALTER TABLE departamentos ADD CONSTRAINT localizacoes_departamentos_fk -- Adiciona a foreign key id localização, que se relaciona com a tabela localizações.
+FOREIGN KEY (id_localizacao)
+REFERENCES localizacoes (id_localizacao)
+;
+
+ALTER TABLE empregados ADD CONSTRAINT empregados_empregados_fk -- Adiciona a foreign key id supervisor na tabela empregados, que se auto-relaciona com si mesma.
 FOREIGN KEY (id_supervisor)
 REFERENCES empregados (id_empregado)
-NOT DEFERRABLE;
+;
 
-ALTER TABLE departamentos ADD CONSTRAINT supervisor_departamentos_fk  
+ALTER TABLE departamentos ADD CONSTRAINT supervisor_departamentos_fk -- Adiciona a foreign key id supervisor na tabela departamentos.
 FOREIGN KEY (id_supervisor)
 REFERENCES empregados (id_empregado)
-NOT DEFERRABLE;
+;
 
-ALTER TABLE hr.historico_cargos ADD CONSTRAINT departamentos_historico_cargos_fk
+ALTER TABLE hr.historico_cargos ADD CONSTRAINT departamentos_historico_cargos_fk -- Adiciona a foreign key da tabela histórico, que se relaciona com departamentos.
 FOREIGN KEY (id_departamento)
-REFERENCES hr.departamentos (id_departamento)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
+REFERENCES departamentos (id_departamento)
+;
 
-ALTER TABLE hr.historico_cargos ADD CONSTRAINT empregados_historico_cargos_fk
-FOREIGN KEY (id_empregado)
-REFERENCES hr.empregados (id_empregado)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-DEFERRABLE INITIALLY DEFERRED;
-
-ALTER TABLE empregados_departamentos ADD CONSTRAINT empregados_empregados_departamentos_fk 
+ALTER TABLE hr.historico_cargos ADD CONSTRAINT empregados_historico_cargos_fk -- Adiciona a foreign key da tabela histórico, que se relaciona com empregados.
 FOREIGN KEY (id_empregado)
 REFERENCES empregados (id_empregado)
-NOT DEFERRABLE;
+;
+
+ALTER TABLE departamentos ADD CONSTRAINT empregados_departamentos_fk  -- Adiciona a foreign key da tabela departamentos, que se relaciona com empregados.
+FOREIGN KEY (id_gerente)
+REFERENCES empregados (id_empregado)
+;
