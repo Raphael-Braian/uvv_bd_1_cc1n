@@ -14,7 +14,7 @@ tremenda lentidão e dificuldade. Impossibilitado de instalar os aplicativos nec
 
 tive de me virar com o que podia.
 
-1. Quando instalei e terminei de configurar o Git na máquina virtual, acabei me deparando com um problema. Sempre
+2. Quando instalei e terminei de configurar o Git na máquina virtual, acabei me deparando com um problema. Sempre
 
 que eu tentava executar o comando Push, e o Initial Commit, para este documento de texto e sub-diretório, eu me deparava
 
@@ -30,7 +30,7 @@ do Github para inserir no lugar do campo que requisitava uma senha. Eu pesquisei
 
 acabou funcionando e eu pude executar o comando Push.
 
-1. Em algum ponto do processo, meu diretório original se tornou corrompido, e a solução foi revertê-lo para uma versão anterior.
+3. Em algum ponto do processo, meu diretório original se tornou corrompido, e a solução foi revertê-lo para uma versão anterior.
 
 Feito isso, porém, a versão do projeto no Github e a versão local na máquina virtual se tornaram incompatíveis, impossibilitando
 
