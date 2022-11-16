@@ -1291,7 +1291,7 @@ FOREIGN KEY (id_cargo)
 REFERENCES cargos (id_cargo)
 ;
 
-ALTER TABLE hr.historico_cargos ADD CONSTRAINT cargos_historico_cargos_fk -- Adiciona a foreign key id cargo, que referencia a tabela cargos. (Em histórico cargos)
+ALTER TABLE historico_cargos ADD CONSTRAINT cargos_historico_cargos_fk -- Adiciona a foreign key id cargo, que referencia a tabela cargos. (Em histórico cargos)
 FOREIGN KEY (id_cargo)
 REFERENCES cargos (id_cargo)
 ;
@@ -1306,7 +1306,7 @@ FOREIGN KEY (id_pais)
 REFERENCES paises (id_pais)
 ;
 
-ALTER TABLE hr.localizacoes ADD CONSTRAINT regioes_localizacoes_fk -- Adiciona a foreign key id país na tabela localizações, que se relaciona com a tabela de regiões.
+ALTER TABLE localizacoes ADD CONSTRAINT regioes_localizacoes_fk -- Adiciona a foreign key id país na tabela localizações, que se relaciona com a tabela de regiões.
 FOREIGN KEY (id_pais)
 REFERENCES paises (id_pais)
 ;
@@ -1326,12 +1326,12 @@ FOREIGN KEY (id_supervisor)
 REFERENCES empregados (id_empregado)
 ;
 
-ALTER TABLE hr.historico_cargos ADD CONSTRAINT departamentos_historico_cargos_fk -- Adiciona a foreign key da tabela histórico, que se relaciona com departamentos.
+ALTER TABLE historico_cargos ADD CONSTRAINT departamentos_historico_cargos_fk -- Adiciona a foreign key da tabela histórico, que se relaciona com departamentos.
 FOREIGN KEY (id_departamento)
 REFERENCES departamentos (id_departamento)
 ;
 
-ALTER TABLE hr.historico_cargos ADD CONSTRAINT empregados_historico_cargos_fk -- Adiciona a foreign key da tabela histórico, que se relaciona com empregados.
+ALTER TABLE historico_cargos ADD CONSTRAINT empregados_historico_cargos_fk -- Adiciona a foreign key da tabela histórico, que se relaciona com empregados.
 FOREIGN KEY (id_empregado)
 REFERENCES empregados (id_empregado)
 ;
