@@ -1,3 +1,34 @@
+/* Vamos começar por criar o usuário que vai ser responsável pelo BD.
+Ele vai ter os privilégios de administrador, podendo criar BDs */
+
+CREATE USER Raphael
+WITH 
+ ENCRYPTED PASSWORD '123456'
+ CREATEDB
+; 
+
+-- Feito isso, criamos o Banco de Dados ''uvv'' para armazenar o projeto.
+CREATE DATABASE uvv                                   
+WITH 
+OWNER = Raphael
+TEMPLATE = template0
+ENCODING = "UTF8"
+LC_COLLATE = 'pt_BR.UTF-8'
+LC_CTYPE = 'pt_BR.UTF-8'
+ALLOW_CONNECTIONS = true
+;
+ 
+-- Conectamos o usuário...
+\c uvv Raphael
+;
+
+-- E seguimos para criar os esquemas.
+CREATE SCHEMA hr AUTHORIZATION Raphael;
+ALTER USER Raphael SET SEARCH_PATH TO hr, "$user", public;
+
+/* Feito isso, começa-se a criação de todas as tabelas, seus campos,
+e a inserção dos registros. */
+
 -- Os comandos a seguir criam as tabelas e colunas do modelo lógico HR, com base no esquema HR.
 CREATE TABLE hr.cargos (
                 id_cargo VARCHAR(10) NOT NULL,
@@ -6,11 +37,11 @@ CREATE TABLE hr.cargos (
                 salario_maximo NUMERIC(8,2),
                 CONSTRAINT id_cargo PRIMARY KEY (id_cargo)
 );
-COMMENT ON TABLE hr.cargos IS 'Agora vamos para a tabela dos cargos. Isso me faz questionar que tipo de empresa é essa? Nunca é deixado claro. Acho que esse sistema de banco de dados pode ser útil para várias empresas, sem especificidade. Prático.';
-COMMENT ON COLUMN hr.cargos.id_cargo IS 'ê ID pra tudo?';
-COMMENT ON COLUMN hr.cargos.cargo IS 'trado aqui?';
+COMMENT ON TABLE hr.cargos IS 'Agora vamos para a tabela dos cargos. Isso me faz questionar que tipo de empresa é essa?';
+COMMENT ON COLUMN hr.cargos.id_cargo IS 'Tem ID pra tudo?';
+COMMENT ON COLUMN hr.cargos.cargo IS 'Coluna dos cargos. O meu seria de TI.';
 COMMENT ON COLUMN hr.cargos.salario_minimo IS 'Tô na universidade pra fugir disso aqui.';
-COMMENT ON COLUMN hr.cargos.salario_maximo IS 'do mundo? Quem é a pessoa que, exercendo uma profissão, fatura mais no mundo inteiro? Devo lembrar de pesquisar no Google depois.';
+COMMENT ON COLUMN hr.cargos.salario_maximo IS 'Criação do campo de salário máximo. Verdadeiramente um sonho';
 
 CREATE UNIQUE INDEX ak
  ON hr.cargos
@@ -22,8 +53,8 @@ CREATE TABLE hr.regioes (
                 CONSTRAINT id_regiao PRIMARY KEY (id_regiao)
 );
 COMMENT ON TABLE hr.regioes IS 'Essa é a tabela de regiões. É a primeira tabela que eu decidi recriar no SQL Power Architect, não só por ser uma das mais simples do projeto, como por se conectar com apenas outra tabela através de uma PK, a tabela países.';
-COMMENT ON COLUMN hr.regioes.id_regiao IS 'não conhecia o propósito. É como um DDD de celular? Tive de pesquisar para entender melhor.';
-COMMENT ON COLUMN hr.regioes.nome IS 'arte foi descobrir como limitar a quantidade de Varchar para 25.';
+COMMENT ON COLUMN hr.regioes.id_regiao IS 'Não conhecia o propósito desse ID de região. É como um DDD de celular? Tive de pesquisar para entender melhor.';
+COMMENT ON COLUMN hr.regioes.nome IS 'Campo de entrada para o nome das regiões';
 
 CREATE UNIQUE INDEX regioes_idx
  ON hr.regioes
@@ -35,10 +66,10 @@ CREATE TABLE hr.paises (
                 id_regiao INTEGER NOT NULL,
                 CONSTRAINT id_pais PRIMARY KEY (id_pais)
 );
-COMMENT ON TABLE hr.paises IS 'Segunda tabela criada. O desafio na primeira foi identificar a Alternate Key. O desafio nessa vai ser conectar à Primary Key com a Foreign Key. Vou descobrir!';
-COMMENT ON COLUMN hr.paises.id_pais IS 'País da terceira tabela, de Localizações. Como eu vou criar esse relacionamento, só Deus sabe.';
-COMMENT ON COLUMN hr.paises.nome IS 'a portadora da Alternate Key dentre esses campos.';
-COMMENT ON COLUMN hr.paises.id_regiao IS 'tamente é um ''''ID de região''''. Entendo que é um número, mas não conhecia o propósito. É como um DDD de celular? Tive de pesquisar para entender melhor.';
+COMMENT ON TABLE hr.paises IS 'Segunda tabela criada. O desafio na primeira foi identificar a Alternate Key. O desafio nessa vai ser conectar à Primary Key com a Foreign Key.';
+COMMENT ON COLUMN hr.paises.id_pais IS 'Campo de entrada para o ID dos países.';
+COMMENT ON COLUMN hr.paises.nome IS 'Nome dos países. A portadora da Alternate Key dentre esses campos.';
+COMMENT ON COLUMN hr.paises.id_regiao IS 'O que é um ID de região? Entendo que é um número, mas não conhecia o propósito. É como um DDD de celular? Tive de pesquisar para entender melhor.';
 
 CREATE UNIQUE INDEX paises_idx
  ON hr.paises
@@ -54,18 +85,18 @@ CREATE TABLE hr.localizacoes (
                 CONSTRAINT id_localizacoes PRIMARY KEY (id_localizacao)
 );
 COMMENT ON TABLE hr.localizacoes IS 'Essa é a terceira tabela com a qual vamos trabalhar, a tabela de localizações. Ela deve se conectar tanto com a tabela de regiões, quanto com a tabela de departamentos. Então deve se mostrar como um desafio interessante.';
-COMMENT ON COLUMN hr.localizacoes.id_localizacao IS 'como todos esses IDs funcionam, pra ser sincero. Esse campo atua como a Primary Key que se relaciona com a tabela de departamentos.';
+COMMENT ON COLUMN hr.localizacoes.id_localizacao IS 'Esse campo atua como a Primary Key que se relaciona com a tabela de departamentos.';
 COMMENT ON COLUMN hr.localizacoes.endereco IS 'Campo para escrita do endereço.';
-COMMENT ON COLUMN hr.localizacoes.cep IS 'que comentar.';
-COMMENT ON COLUMN hr.localizacoes.cidade IS 'localizados. Cara, eu queria viver em uma cidade maneira como Shibuya no Japão. As cidades do Brasil são tão caídas';
-COMMENT ON COLUMN hr.localizacoes.uf IS 'u muito cansado e não tô raciocinando direito hoje. Imploro ao professor Abrantes, em sua infinita sabedoria e misericórdia, que não reduza minha nota por causa dessas anotações bestas.';
+COMMENT ON COLUMN hr.localizacoes.cep IS 'Campo para o CEP.';
+COMMENT ON COLUMN hr.localizacoes.cidade IS 'Campo para os nomes das cidades. Cara, eu queria viver em uma cidade maneira como Shibuya no Japão. As cidades do Brasil são tão caídas';
+COMMENT ON COLUMN hr.localizacoes.uf IS 'Campo da UF, que eu assumo que seja Unidade Federativa (?).';
 COMMENT ON COLUMN hr.localizacoes.id_pais IS 'País da terceira tabela, de Localizações. Como eu vou criar esse relacionamento, só Deus sabe.';
 
 CREATE TABLE hr.departamentos (
                 id_departamento INTEGER NOT NULL,
                 nome VARCHAR(50),
                 id_localizacao INTEGER, 
-                id_gerente INTEGER NOT NULL,
+                id_supervisor INTEGER NOT NULL,
                 CONSTRAINT id_departamento PRIMARY KEY (id_departamento)
 );
 COMMENT ON TABLE hr.departamentos IS 'Essa é a quarta tabela que eu recriei. Também é a primeira que eu pinto de uma cor diferente. A tabela departamento reúne campos que se conectam mais com outras tabelas, como o Id de Localização e o Id Gerente. Sua Primary Key é a Id de Departamento';
@@ -86,7 +117,7 @@ CREATE TABLE hr.empregados (
                 telefone VARCHAR(20),
                 data_contratacao DATE NOT NULL,
                 id_cargo VARCHAR(10) NOT NULL,
-                salario NUMERIC(8,2),
+                salario NUMERIC(8,2) NOT NULL,
                 comissao NUMERIC(4,2),
                 id_departamento INTEGER,
                 id_supervisor INTEGER,
@@ -110,7 +141,7 @@ CREATE UNIQUE INDEX ak2 --Aqui temos um index que me ajuda a identificar a Alter
  ( email );
 
 CREATE TABLE hr.historico_cargos (
-                id_empregado_fk INTEGER NOT NULL,
+                id_empregado INTEGER NOT NULL,
                 data_inicial DATE NOT NULL,
                 data_final DATE NOT NULL,
                 id_cargo VARCHAR(10) NOT NULL,
@@ -2341,6 +2372,11 @@ ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
+ALTER TABLE paises ADD CONSTRAINT regioes_paises_fk
+FOREIGN KEY (id_regiao)
+REFERENCES regioes (id_regiao)
+NOT DEFERRABLE;
+
 ALTER TABLE hr.paises ADD CONSTRAINT regions_regioes_fk
 FOREIGN KEY (id_regiao)
 REFERENCES hr.regioes (id_regiao)
@@ -2348,11 +2384,26 @@ ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
+ALTER TABLE localizacoes ADD CONSTRAINT paises_localizacoes_fk 
+FOREIGN KEY (id_pais)
+REFERENCES paises (id_pais)
+NOT DEFERRABLE;
+
 ALTER TABLE hr.localizacoes ADD CONSTRAINT regioes_localizacoes_fk
 FOREIGN KEY (id_pais)
 REFERENCES hr.paises (id_pais)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
+NOT DEFERRABLE;
+
+ALTER TABLE empregados ADD CONSTRAINT empregados_empregados_fk 
+FOREIGN KEY (id_supervisor)
+REFERENCES empregados (id_empregado)
+NOT DEFERRABLE;
+
+ALTER TABLE departamentos ADD CONSTRAINT supervisor_departamentos_fk  
+FOREIGN KEY (id_supervisor)
+REFERENCES empregados (id_empregado)
 NOT DEFERRABLE;
 
 ALTER TABLE hr.historico_cargos ADD CONSTRAINT departamentos_historico_cargos_fk
@@ -2363,11 +2414,16 @@ ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
 ALTER TABLE hr.historico_cargos ADD CONSTRAINT empregados_historico_cargos_fk
-FOREIGN KEY (id_empregado_fk)
+FOREIGN KEY (id_empregado)
 REFERENCES hr.empregados (id_empregado)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 DEFERRABLE INITIALLY DEFERRED;
+
+ALTER TABLE empregados_departamentos ADD CONSTRAINT empregados_empregados_departamentos_fk 
+FOREIGN KEY (id_empregado)
+REFERENCES empregados (id_empregado)
+NOT DEFERRABLE;
 
 
 
