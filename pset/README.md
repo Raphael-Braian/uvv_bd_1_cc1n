@@ -1,6 +1,6 @@
-﻿\# PSET #
+﻿# PSET #
 
-\#### Raphael Braian C. - CC1N ####
+#### Raphael Braian C. - CC1N ####
 
 Essa pasta, e especialmente esse bloco de texto, é a minha primeira etapa na estruturação de um espaço para armazenar
 
@@ -40,7 +40,7 @@ resolveria isso, mas por alguma razão isso não funcionou pra mim. Tive de util
 
 as alterações no projeto.
 
-\## SQL POWER ARCHITECT ##
+## SQL POWER ARCHITECT ##
 
 Aprender a utilizar o SQL Power Architect não foi difícil. Minha única ''dificuldade'' foi aprender à criar as AK, Alternate Keys,
 
@@ -60,7 +60,7 @@ alterar). Eu costumo escrever muito e fazer várias piadinhas sem graça, e exis
 
 SGBD's que eu desconhecia. Para automatizar um script para o MariaDB, por exemplo, eu vou precisar refazer todos os comentários.
 
-\### Root e instalação dos pacotes de linguagem. ###
+### Root e instalação dos pacotes de linguagem. ###
 
 Eu havia esquecido completamente de como acessar o usuário Root. Tentei usar o comando Sudo do terminal, mas logado como um usuário
 
@@ -70,7 +70,7 @@ Pesquisei na Internet qual o comando específico para executar uma instalação 
 
 Depois de certo tempo, os pacotes de linguagem foram instalados sem demais problemas.
 
-\## POSTGRESQL ##
+## POSTGRESQL ##
 
 O primeiro script que eu automatizei foi o do Postgresql. Ele foi fácil de produzir, necessitando apenas de algumas correções no
 
@@ -96,7 +96,7 @@ e Foreign Key já estabelecidas no código. A solução pra isso foi alterar o s
 
 do código, depois dos Inserts de dados. Com isso, o script do Postgresql passou a funcionar bem no meu computador. Agora faltava o do MariaDB.
 
-\## MYSQL/MARIADB ##
+## MYSQL/MARIADB ##
 
 Por incrível que pareça, o SGBD com o qual eu era o mais familiar acabou me causando a maior dor de cabeça. Praticamente todos os meus comentários
 
