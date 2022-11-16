@@ -151,12 +151,12 @@ CREATE UNIQUE INDEX ak1
  ( email );
 
 CREATE TABLE historico_cargos (
-                id_empregado_fk INT NOT NULL, 
+                id_empregado INT NOT NULL, 
                 data_inicial DATE NOT NULL,
                 data_final DATE NOT NULL,
                 id_cargo VARCHAR(10) NOT NULL,
                 id_departamento INT,
-                PRIMARY KEY (data_inicial, id_empregado_fk)
+                PRIMARY KEY (data_inicial, id_empregado)
 );
 
 /* 'Tabela de histórico de cargos.'
