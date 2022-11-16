@@ -1,4 +1,18 @@
--- Seguem aqui os comandos para a criação das tabelas do modelo HR e suas respectivas colunas.
+-- Começamos criando o banco de dados.
+CREATE DATABASE uvv
+       DEFAULT CHARACTER SET = 'UTF8'
+       DEFAULT COLLATE = 'utf8_general_ci';
+    
+-- E seguimos com o usuário que vai administrar.
+CREATE USER Raphael 
+       IDENTIFIED BY '123456';
+       GRANT ALL PRIVILEGES ON uvv.* TO Raphael;
+       FLUSH PRIVILEGES;
+       
+-- Selecionamos o BD.
+USE uvv;
+
+-- E seguem aqui os comandos para a criação das tabelas do modelo HR e suas respectivas colunas.
 CREATE TABLE cargos (
                 id_cargo VARCHAR(10) NOT NULL,
                 cargo VARCHAR(35) NOT NULL,
@@ -84,10 +98,10 @@ CREATE TABLE localizacoes (
 
 
 CREATE TABLE departamentos (
-                id_departamento INT,
-                nome VARCHAR(50),
-                id_localizacao INT,
-                id_gerente INT,
+                id_departamento INT NOT NULL,
+                nome VARCHAR(50) NOT NULL,
+                id_localizacao INT NOT NULL,
+                id_supervisor INT,
                 PRIMARY KEY (id_departamento)
 );
 
@@ -113,7 +127,7 @@ CREATE TABLE empregados (
                 telefone VARCHAR(20),
                 data_contratacao DATE NOT NULL,
                 id_cargo VARCHAR(10) NOT NULL,
-                salario DECIMAL(8,2),
+                salario DECIMAL(8,2) NOT NULL,
                 comissao DECIMAL(4,2),
                 id_departamento INT,
                 id_supervisor INT,
@@ -1272,52 +1286,69 @@ VALUES  ( 200
        
        -- Aqui seguem as constraints para foreign keys, que relacionam as diversas tabelas do projeto.
 
-ALTER TABLE empregados ADD CONSTRAINT cargos_empregados_fk
+ ALTER TABLE hr.empregados ADD CONSTRAINT cargos_empregados_fk
 FOREIGN KEY (id_cargo)
-REFERENCES cargos (id_cargo)
+REFERENCES hr.cargos (id_cargo)
 ON DELETE NO ACTION
-ON UPDATE NO ACTION;
+ON UPDATE NO ACTION
+NOT DEFERRABLE;
 
-ALTER TABLE historico_cargos ADD CONSTRAINT cargos_historico_cargos_fk
+ALTER TABLE hr.historico_cargos ADD CONSTRAINT cargos_historico_cargos_fk
 FOREIGN KEY (id_cargo)
-REFERENCES cargos (id_cargo)
+REFERENCES hr.cargos (id_cargo)
 ON DELETE NO ACTION
-ON UPDATE NO ACTION;
+ON UPDATE NO ACTION
+NOT DEFERRABLE;
 
-ALTER TABLE paises ADD CONSTRAINT regions_regioes_fk
+ALTER TABLE paises ADD CONSTRAINT regioes_paises_fk
 FOREIGN KEY (id_regiao)
 REFERENCES regioes (id_regiao)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION;
+NOT DEFERRABLE;
 
-ALTER TABLE localizacoes ADD CONSTRAINT regioes_localizacoes_fk
+ALTER TABLE hr.paises ADD CONSTRAINT regions_regioes_fk
+FOREIGN KEY (id_regiao)
+REFERENCES hr.regioes (id_regiao)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE;
+
+ALTER TABLE localizacoes ADD CONSTRAINT paises_localizacoes_fk 
 FOREIGN KEY (id_pais)
 REFERENCES paises (id_pais)
+NOT DEFERRABLE;
+
+ALTER TABLE hr.localizacoes ADD CONSTRAINT regioes_localizacoes_fk
+FOREIGN KEY (id_pais)
+REFERENCES hr.paises (id_pais)
 ON DELETE NO ACTION
-ON UPDATE NO ACTION;
+ON UPDATE NO ACTION
+NOT DEFERRABLE;
 
-
-ALTER TABLE empregados ADD CONSTRAINT departamentos_empregados_fk
-FOREIGN KEY (id_departamento)
-REFERENCES departamentos (id_departamento)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION;
-
-ALTER TABLE historico_cargos ADD CONSTRAINT departamentos_historico_cargos_fk
-FOREIGN KEY (id_departamento)
-REFERENCES departamentos (id_departamento)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION;
-
-ALTER TABLE historico_cargos ADD CONSTRAINT empregados_historico_cargos_fk
-FOREIGN KEY (id_empregado_fk)
-REFERENCES empregados (id_empregado)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION;
-
-ALTER TABLE empregados ADD CONSTRAINT empregados_empregados_fk
+ALTER TABLE empregados ADD CONSTRAINT empregados_empregados_fk 
 FOREIGN KEY (id_supervisor)
 REFERENCES empregados (id_empregado)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION;
+NOT DEFERRABLE;
 
+ALTER TABLE departamentos ADD CONSTRAINT supervisor_departamentos_fk  
+FOREIGN KEY (id_supervisor)
+REFERENCES empregados (id_empregado)
+NOT DEFERRABLE;
+
+ALTER TABLE hr.historico_cargos ADD CONSTRAINT departamentos_historico_cargos_fk
+FOREIGN KEY (id_departamento)
+REFERENCES hr.departamentos (id_departamento)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE;
+
+ALTER TABLE hr.historico_cargos ADD CONSTRAINT empregados_historico_cargos_fk
+FOREIGN KEY (id_empregado)
+REFERENCES hr.empregados (id_empregado)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+DEFERRABLE INITIALLY DEFERRED;
+
+ALTER TABLE empregados_departamentos ADD CONSTRAINT empregados_empregados_departamentos_fk 
+FOREIGN KEY (id_empregado)
+REFERENCES empregados (id_empregado)
+NOT DEFERRABLE;
