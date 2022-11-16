@@ -1,5 +1,5 @@
 # PSET #
-*Raphael Braian C. - CC1N*
+*Raphael Braian C. - CC1N || *
 Essa pasta, e especialmente esse bloco de texto, é a minha primeira etapa na estruturação de um espaço para armazenar 
 os meus scripts e o meu progresso no Pset, direcionando eles para o meu repositório Github através do comando PUSH.
 Quando eu criei esse subdiretório, eu tive de enfrentar alguns problemas. Entre eles:
@@ -22,8 +22,6 @@ Feito isso, porém, a versão do projeto no Github e a versão local na máquina
 que eu utilizasse o comando Push para levar minhas alterações direto para o diretório Github online. Normalmente, um comando PULL
 resolveria isso, mas por alguma razão isso não funcionou pra mim. Tive de utilizar o Commit no próprio website do Github para salvar
 as alterações no projeto.
-
---
 
 ## SQL POWER ARCHITECT ##
 Aprender a utilizar o SQL Power Architect não foi difícil. Minha única ''dificuldade'' foi aprender à criar as AK, Alternate Keys,
