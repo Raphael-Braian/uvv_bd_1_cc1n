@@ -1286,7 +1286,7 @@ VALUES  ( 200
        
        -- Aqui seguem as constraints para foreign keys, que relacionam as diversas tabelas do projeto.
 
- ALTER TABLE hr.empregados ADD CONSTRAINT cargos_empregados_fk -- Adiciona a Foreign Key Id Cargo, que referencia a tabela cargos.
+ ALTER TABLE empregados ADD CONSTRAINT cargos_empregados_fk -- Adiciona a Foreign Key Id Cargo, que referencia a tabela cargos.
 FOREIGN KEY (id_cargo)
 REFERENCES cargos (id_cargo)
 ;
