@@ -1,5 +1,5 @@
 # PSET #
-*Raphael Braian C. - CC1N || *
+#### Raphael Braian C. - CC1N ####
 Essa pasta, e especialmente esse bloco de texto, é a minha primeira etapa na estruturação de um espaço para armazenar 
 os meus scripts e o meu progresso no Pset, direcionando eles para o meu repositório Github através do comando PUSH.
 Quando eu criei esse subdiretório, eu tive de enfrentar alguns problemas. Entre eles:
