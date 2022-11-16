@@ -1,4 +1,5 @@
-#PSET
+# PSET #
+*Raphael Braian C. - CC1N*
 Essa pasta, e especialmente esse bloco de texto, é a minha primeira etapa na estruturação de um espaço para armazenar 
 os meus scripts e o meu progresso no Pset, direcionando eles para o meu repositório Github através do comando PUSH.
 Quando eu criei esse subdiretório, eu tive de enfrentar alguns problemas. Entre eles:
@@ -23,7 +24,8 @@ resolveria isso, mas por alguma razão isso não funcionou pra mim. Tive de util
 as alterações no projeto.
 
 --
-##SQL POWER ARCHITECT
+
+## SQL POWER ARCHITECT ##
 Aprender a utilizar o SQL Power Architect não foi difícil. Minha única ''dificuldade'' foi aprender à criar as AK, Alternate Keys,
 que existiam no modelo HR passado pelo professor. Mas relendo o Pset eu me dei conta de que deveria fazer isso através da propri-
 edade Index. O processo se tornou bem fácil desde então.
@@ -34,13 +36,13 @@ Outro problema que enfrentei foi o tamanho dos comentários, na hora de converte
 alterar). Eu costumo escrever muito e fazer várias piadinhas sem graça, e existem limites específicos de caracteres para alguns
 SGBD's que eu desconhecia. Para automatizar um script para o MariaDB, por exemplo, eu vou precisar refazer todos os comentários.
 
-###Root e instalação dos pacotes de linguagem.
+### Root e instalação dos pacotes de linguagem. ###
 Eu havia esquecido completamente de como acessar o usuário Root. Tentei usar o comando Sudo do terminal, mas logado como um usuário
 não administrador, o Computacao. Quando me dei conta de que eu precisava logar com o usuário administrador, se tornou mais fácil.
 Pesquisei na Internet qual o comando específico para executar uma instalação na minha versão do Linux (da máquina virtual), e funcionou.
 Depois de certo tempo, os pacotes de linguagem foram instalados sem demais problemas.
 
-##POSTGRESQL
+## POSTGRESQL ##
 O primeiro script que eu automatizei foi o do Postgresql. Ele foi fácil de produzir, necessitando apenas de algumas correções no 
 projeto lógico. Dito isto, eu tive de aprender a utilizar o Postgres, já que nunca havíamos feito uso desse SGBD durante as aulas.
 As aulas online da Bóson Treinamento foram de grande ajuda. Eu aprendi a me conectar ao Postgres, criar um banco de dados, criar um
@@ -54,7 +56,7 @@ Porém, logo me vi encarando outro problema. O código não queria funcionar, po
 e Foreign Key já estabelecidas no código. A solução pra isso foi alterar o script, pegando os comandos das Constraints e colocando-os no final
 do código, depois dos Inserts de dados. Com isso, o script do Postgresql passou a funcionar bem no meu computador. Agora faltava o do MariaDB.
 
-##MYSQL/MARIADB
+## MYSQL/MARIADB ##
 Por incrível que pareça, o SGBD com o qual eu era o mais familiar acabou me causando a maior dor de cabeça. Praticamente todos os meus comentários
 do projeto lógico tiveram de ser refeitos, devido ao limite de caracteres para comentários no MariaDB. Não só isso, mas houve um erro com a
 Deferrability de uma das relações 1:N entre as tabelas que eu tive de consertar. E mesmo com isso feito, o script lógico automatizado precisou
