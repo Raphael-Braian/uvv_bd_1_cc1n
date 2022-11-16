@@ -52,7 +52,7 @@ CREATE TABLE hr.regioes (
                 nome VARCHAR(25) NOT NULL,
                 CONSTRAINT id_regiao PRIMARY KEY (id_regiao)
 );
-COMMENT ON TABLE hr.regioes IS 'Essa é a tabela de regiões. É a primeira tabela que eu decidi recriar no SQL Power Architect, não só por ser uma das mais simples do projeto, como por se conectar com apenas outra tabela através de uma PK, a tabela países.';
+COMMENT ON TABLE hr.regioes IS 'Essa é a tabela de regiões. É a primeira tabela que eu decidi recriar no SQL Power Architect.';
 COMMENT ON COLUMN hr.regioes.id_regiao IS 'Não conhecia o propósito desse ID de região. É como um DDD de celular? Tive de pesquisar para entender melhor.';
 COMMENT ON COLUMN hr.regioes.nome IS 'Campo de entrada para o nome das regiões';
 
@@ -66,10 +66,10 @@ CREATE TABLE hr.paises (
                 id_regiao INTEGER NOT NULL,
                 CONSTRAINT id_pais PRIMARY KEY (id_pais)
 );
-COMMENT ON TABLE hr.paises IS 'Segunda tabela criada. O desafio na primeira foi identificar a Alternate Key. O desafio nessa vai ser conectar à Primary Key com a Foreign Key.';
+COMMENT ON TABLE hr.paises IS 'Segunda tabela criada. O desafio nessa vai ser conectar à Primary Key com a Foreign Key.';
 COMMENT ON COLUMN hr.paises.id_pais IS 'Campo de entrada para o ID dos países.';
 COMMENT ON COLUMN hr.paises.nome IS 'Nome dos países. A portadora da Alternate Key dentre esses campos.';
-COMMENT ON COLUMN hr.paises.id_regiao IS 'O que é um ID de região? Entendo que é um número, mas não conhecia o propósito. É como um DDD de celular? Tive de pesquisar para entender melhor.';
+COMMENT ON COLUMN hr.paises.id_regiao IS 'O que é um ID de região? Entendo que é um número, mas não conhecia o propósito. É como um DDD de celular?';
 
 CREATE UNIQUE INDEX paises_idx
  ON hr.paises
@@ -84,7 +84,7 @@ CREATE TABLE hr.localizacoes (
                 id_pais CHAR(2) NOT NULL,
                 CONSTRAINT id_localizacoes PRIMARY KEY (id_localizacao)
 );
-COMMENT ON TABLE hr.localizacoes IS 'Essa é a terceira tabela com a qual vamos trabalhar, a tabela de localizações. Ela deve se conectar tanto com a tabela de regiões, quanto com a tabela de departamentos. Então deve se mostrar como um desafio interessante.';
+COMMENT ON TABLE hr.localizacoes IS 'Essa é a terceira tabela com a qual vamos trabalhar, a tabela de localizações.';
 COMMENT ON COLUMN hr.localizacoes.id_localizacao IS 'Esse campo atua como a Primary Key que se relaciona com a tabela de departamentos.';
 COMMENT ON COLUMN hr.localizacoes.endereco IS 'Campo para escrita do endereço.';
 COMMENT ON COLUMN hr.localizacoes.cep IS 'Campo para o CEP.';
@@ -99,11 +99,11 @@ CREATE TABLE hr.departamentos (
                 id_gerente INTEGER NOT NULL,
                 CONSTRAINT id_departamento PRIMARY KEY (id_departamento)
 );
-COMMENT ON TABLE hr.departamentos IS 'Essa é a quarta tabela que eu recriei. Também é a primeira que eu pinto de uma cor diferente. A tabela departamento reúne campos que se conectam mais com outras tabelas, como o Id de Localização e o Id Gerente. Sua Primary Key é a Id de Departamento';
-COMMENT ON COLUMN hr.departamentos.id_departamento IS 'o ID de Departamento. Eu não tinha ideia que Departamentos precisavam de IDs. Não é mais fácil só identificar pelo nome do departamento?';
-COMMENT ON COLUMN hr.departamentos.nome IS 'mes legais, tipo ''''Processamento de Macrodados''''. Ei professor, se estiver lendo isso, dê uma olhada em uma série chamada ''''Ruptura'''', da Apple. Acho que vai gostar';
-COMMENT ON COLUMN hr.departamentos.id_localizacao IS 'como todos esses IDs funcionam, pra ser sincero. Esse campo atua como a Primary Key que se relaciona com a tabela de departamentos.';
-COMMENT ON COLUMN hr.departamentos.id_gerente IS 'o bastava o ID das regiões, países e departamentos? Bem, acho que ID de empregados é bem mais comum, na verdade.';
+COMMENT ON TABLE hr.departamentos IS 'Essa é a quarta tabela que eu recriei.A tabela departamento reúne campos que se conectam mais com outras tabelas. Sua Primary Key é a Id de Departamento';
+COMMENT ON COLUMN hr.departamentos.id_departamento IS 'Campo para o ID de Departamento. Eu não tinha ideia que Departamentos precisavam de IDs.';
+COMMENT ON COLUMN hr.departamentos.nome IS 'Campo para o nome dos Departamentos';
+COMMENT ON COLUMN hr.departamentos.id_localizacao IS 'Esse campo atua como a Primary Key que se relaciona com a tabela de departamentos.';
+COMMENT ON COLUMN hr.departamentos.id_gerente IS 'Campo para o Id do gerente.';
 
 
 CREATE UNIQUE INDEX ak1
@@ -123,17 +123,17 @@ CREATE TABLE hr.empregados (
                 id_supervisor INTEGER,
                 CONSTRAINT id_empregado PRIMARY KEY (id_empregado)
 );
-COMMENT ON TABLE hr.empregados IS 'tos? Seria isso um erro (?)';
-COMMENT ON COLUMN hr.empregados.id_empregado IS 'o bastava o ID das regiões, países e departamentos? Bem, acho que ID de empregados é bem mais comum, na verdade.';
-COMMENT ON COLUMN hr.empregados.nome IS 'O nome dos empregados. O meu seria ''''Raphael Braian C.''''';
-COMMENT ON COLUMN hr.empregados.email IS 'm trabalhar com Banco de Dados se você estiver solteiro. Tem alguma moça bonita no escritório e você quer o e-mail dela? Só olhar diretamente aqui, nem precisa perguntar.';
-COMMENT ON COLUMN hr.empregados.telefone IS 'har aqui, precisa resistir à tentação de fazer trotes constantes nos seus colegas de trabalho.';
-COMMENT ON COLUMN hr.empregados.data_contratacao IS 'uncionário. Caso você precise fazer uma festa de aniversário de contratação surpresa. Na verdade, isso nem sequer existe, não é? Mas seria divertido.';
-COMMENT ON COLUMN hr.empregados.id_cargo IS 'ê ID pra tudo?';
-COMMENT ON COLUMN hr.empregados.salario IS 'amenta de exploração que existe, e ao mesmo tempo, a fonte da nossa felicidade.';
+COMMENT ON TABLE hr.empregados IS 'Tabela dos Empregados.';
+COMMENT ON COLUMN hr.empregados.id_empregado IS 'ID dos empregados (pra variar)';
+COMMENT ON COLUMN hr.empregados.nome IS 'O nome dos empregados. O meu seria Raphael Braian C.';
+COMMENT ON COLUMN hr.empregados.email IS 'Campo para o E-mail dos funcionários.';
+COMMENT ON COLUMN hr.empregados.telefone IS 'Campo para o telefone dos funcionários.';
+COMMENT ON COLUMN hr.empregados.data_contratacao IS 'Data de contratação, caso existam festas de aniversário de contratação.';
+COMMENT ON COLUMN hr.empregados.id_cargo IS 'ID dos cargos?';
+COMMENT ON COLUMN hr.empregados.salario IS 'Salário dos funcionários.';
 COMMENT ON COLUMN hr.empregados.comissao IS 'Uma comissão em dinheiro à ser paga.';
-COMMENT ON COLUMN hr.empregados.id_departamento IS 'o ID de Departamento. Eu não tinha ideia que Departamentos precisavam de IDs. Não é mais fácil só identificar pelo nome do departamento?';
-COMMENT ON COLUMN hr.empregados.id_supervisor IS 'se relaciona com a própria tabela. Tive dificuldades de entender como fazer isso, então tirei algumas dúvidas com colegas.';
+COMMENT ON COLUMN hr.empregados.id_departamento IS 'o ID de Departamento. Eu não tinha ideia que Departamentos precisavam de IDs.';
+COMMENT ON COLUMN hr.empregados.id_supervisor IS 'ID supervisor que se relaciona com a própria tabela.';
 
 
 CREATE UNIQUE INDEX ak2 --Aqui temos um index que me ajuda a identificar a Alternate key.
@@ -148,12 +148,12 @@ CREATE TABLE hr.historico_cargos (
                 id_departamento INTEGER NOT NULL,
                 CONSTRAINT data_inicial PRIMARY KEY (id_empregado, data_inicial)
 );
-COMMENT ON TABLE hr.historico_cargos IS 'Essa é a última tabela que estou fazendo, a de histórico de cargos. Depois de concluir, irei trabalhar em resolver alguns errinhos e garantir o funcionamento desse modelo lógico.';
-COMMENT ON COLUMN hr.historico_cargos.id_empregado_fk IS 'o bastava o ID das regiões, países e departamentos? Bem, acho que ID de empregados é bem mais comum, na verdade.';
+COMMENT ON TABLE hr.historico_cargos IS 'Essa é a última tabela que estou fazendo, a de histórico de cargos.';
+COMMENT ON COLUMN hr.historico_cargos.id_empregado IS 'ID empregado, foreign key.';
 COMMENT ON COLUMN hr.historico_cargos.data_inicial IS 'Essa aqui é a data inicial do histórico de cargos.';
-COMMENT ON COLUMN hr.historico_cargos.data_final IS 'ta final de entrega desse Pset é dia 15! Preciso me apressar.';
-COMMENT ON COLUMN hr.historico_cargos.id_cargo IS 'ê ID pra tudo?';
-COMMENT ON COLUMN hr.historico_cargos.id_departamento IS 'o ID de Departamento. Eu não tinha ideia que Departamentos precisavam de IDs. Não é mais fácil só identificar pelo nome do departamento?';
+COMMENT ON COLUMN hr.historico_cargos.data_final IS 'Data final do histórico de cargos.';
+COMMENT ON COLUMN hr.historico_cargos.id_cargo IS 'Novamente, ID dos cargos';
+COMMENT ON COLUMN hr.historico_cargos.id_departamento IS 'o ID de Departamento.';
 
 /*Seguindo agora, temos os inserts de todos os valores das tabelas.
  * O primeiro deles é o de regiões, das quais temos apenas 4.
