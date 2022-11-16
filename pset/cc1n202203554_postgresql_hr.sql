@@ -159,22 +159,22 @@ COMMENT ON COLUMN hr.historico_cargos.id_departamento IS 'o ID de Departamento. 
  * O primeiro deles é o de regiões, das quais temos apenas 4.
  */
 
-INSERT INTO regioes VALUES 
+INSERT INTO hr.regioes VALUES 
         ( 1
         , 'Europe' 
         );
 
-INSERT INTO regioes VALUES 
+INSERT INTO hr.regioes VALUES 
         ( 2
         , 'Americas' 
         );
 
-INSERT INTO regioes VALUES 
+INSERT INTO hr.regioes VALUES 
         ( 3
         , 'Asia' 
         );
 
-INSERT INTO regioes VALUES 
+INSERT INTO hr.regioes VALUES 
         ( 4
         , 'Middle East and Africa' 
         );
@@ -183,151 +183,151 @@ INSERT INTO regioes VALUES
         * incluindo seus nomes (em inglês) e ID.
         */
 
-INSERT INTO paises VALUES 
+INSERT INTO hr.paises VALUES 
         ( 'IT'
         , 'Italy'
         , 1 
         );
 
-INSERT INTO paises VALUES 
+INSERT INTO hr.paises VALUES 
         ( 'JP'
         , 'Japan'
 	, 3 
         );
 
-INSERT INTO paises VALUES 
+INSERT INTO hr.paises VALUES 
         ( 'US'
         , 'United States of America'
         , 2 
         );
 
-INSERT INTO paises VALUES 
+INSERT INTO hr.paises VALUES 
         ( 'CA'
         , 'Canada'
         , 2 
         );
 
-INSERT INTO paises VALUES 
+INSERT INTO hr.paises VALUES 
         ( 'CN'
         , 'China'
         , 3 
         );
 
-INSERT INTO paises VALUES 
+INSERT INTO hr.paises VALUES 
         ( 'IN'
         , 'India'
         , 3 
         );
 
-INSERT INTO paises VALUES 
+INSERT INTO hr.paises VALUES 
         ( 'AU'
         , 'Australia'
         , 3 
         );
 
-INSERT INTO paises VALUES 
+INSERT INTO hr.paises VALUES 
         ( 'ZW'
         , 'Zimbabwe'
         , 4 
         );
 
-INSERT INTO paises VALUES 
+INSERT INTO hr.paises VALUES 
         ( 'SG'
         , 'Singapore'
         , 3 
         );
 
-INSERT INTO paises VALUES 
+INSERT INTO hr.paises VALUES 
         ( 'UK'
         , 'United Kingdom'
         , 1 
         );
 
-INSERT INTO paises VALUES 
+INSERT INTO hr.paises VALUES 
         ( 'FR'
         , 'France'
         , 1 
         );
 
-INSERT INTO paises VALUES 
+INSERT INTO hr.paises VALUES 
         ( 'DE'
         , 'Germany'
         , 1 
         );
 
-INSERT INTO paises VALUES 
+INSERT INTO hr.paises VALUES 
         ( 'ZM'
         , 'Zambia'
         , 4 
         );
 
-INSERT INTO paises VALUES 
+INSERT INTO hr.paises VALUES 
         ( 'EG'
         , 'Egypt'
         , 4 
         );
 
-INSERT INTO paises VALUES 
+INSERT INTO hr.paises VALUES 
         ( 'BR'
         , 'Brazil'
         , 2 
         );
 
-INSERT INTO paises VALUES 
+INSERT INTO hr.paises VALUES 
         ( 'CH'
         , 'Switzerland'
         , 1 
         );
 
-INSERT INTO paises VALUES 
+INSERT INTO hr.paises VALUES 
         ( 'NL'
         , 'Netherlands'
         , 1 
         );
 
-INSERT INTO paises VALUES 
+INSERT INTO hr.paises VALUES 
         ( 'MX'
         , 'Mexico'
         , 2 
         );
 
-INSERT INTO paises VALUES 
+INSERT INTO hr.paises VALUES 
         ( 'KW'
         , 'Kuwait'
         , 4 
         );
 
-INSERT INTO paises VALUES 
+INSERT INTO hr.paises VALUES 
         ( 'IL'
         , 'Israel'
         , 4 
         );
 
-INSERT INTO paises VALUES 
+INSERT INTO hr.paises VALUES 
         ( 'DK'
         , 'Denmark'
         , 1 
         );
 
-INSERT INTO paises VALUES 
+INSERT INTO hr.paises VALUES 
         ( 'ML'
         , 'Malaysia'
         , 3 
         );
 
-INSERT INTO paises VALUES 
+INSERT INTO hr.paises VALUES 
         ( 'NG'
         , 'Nigeria'
         , 4 
         );
 
-INSERT INTO paises VALUES 
+INSERT INTO hr.paises VALUES 
         ( 'AR'
         , 'Argentina'
         , 2 
         );
 
-INSERT INTO paises VALUES 
+INSERT INTO hr.paises VALUES 
         ( 'BE'
         , 'Belgium'
         , 1 
@@ -338,7 +338,7 @@ INSERT INTO paises VALUES
         * eu assumo, estejam as filiais das empresas.
         */
        
-       INSERT INTO localizacoes VALUES 
+       INSERT INTO hr.localizacoes VALUES 
         ( 1000 
         , '1297 Via Cola di Rie'
         , '00989'
@@ -347,7 +347,7 @@ INSERT INTO paises VALUES
         , 'IT'
         );
 
-INSERT INTO localizacoes VALUES 
+INSERT INTO hr.localizacoes VALUES 
         ( 1100 
         , '93091 Calle della Testa'
         , '10934'
@@ -356,7 +356,7 @@ INSERT INTO localizacoes VALUES
         , 'IT'
         );
 
-INSERT INTO localizacoes VALUES 
+INSERT INTO hr.localizacoes VALUES 
         ( 1200 
         , '2017 Shinjuku-ku'
         , '1689'
@@ -365,7 +365,7 @@ INSERT INTO localizacoes VALUES
         , 'JP'
         );
 
-INSERT INTO localizacoes VALUES 
+INSERT INTO hr.localizacoes VALUES 
         ( 1300 
         , '9450 Kamiya-cho'
         , '6823'
@@ -374,7 +374,7 @@ INSERT INTO localizacoes VALUES
         , 'JP'
         );
 
-INSERT INTO localizacoes VALUES 
+INSERT INTO hr.localizacoes VALUES 
         ( 1400 
         , '2014 Jabberwocky Rd'
         , '26192'
@@ -383,7 +383,7 @@ INSERT INTO localizacoes VALUES
         , 'US'
         );
 
-INSERT INTO localizacoes VALUES 
+INSERT INTO hr.localizacoes VALUES 
         ( 1500 
         , '2011 Interiors Blvd'
         , '99236'
@@ -392,7 +392,7 @@ INSERT INTO localizacoes VALUES
         , 'US'
         );
 
-INSERT INTO localizacoes VALUES 
+INSERT INTO hr.localizacoes VALUES 
         ( 1600 
         , '2007 Zagora St'
         , '50090'
@@ -401,7 +401,7 @@ INSERT INTO localizacoes VALUES
         , 'US'
         );
 
-INSERT INTO localizacoes VALUES 
+INSERT INTO hr.localizacoes VALUES 
         ( 1700 
         , '2004 Charade Rd'
         , '98199'
@@ -410,7 +410,7 @@ INSERT INTO localizacoes VALUES
         , 'US'
         );
 
-INSERT INTO localizacoes VALUES 
+INSERT INTO hr.localizacoes VALUES 
         ( 1800 
         , '147 Spadina Ave'
         , 'M5V 2L7'
@@ -419,7 +419,7 @@ INSERT INTO localizacoes VALUES
         , 'CA'
         );
 
-INSERT INTO localizacoes VALUES 
+INSERT INTO hr.localizacoes VALUES 
         ( 1900 
         , '6092 Boxwood St'
         , 'YSW 9T2'
@@ -428,7 +428,7 @@ INSERT INTO localizacoes VALUES
         , 'CA'
         );
 
-INSERT INTO localizacoes VALUES 
+INSERT INTO hr.localizacoes VALUES 
         ( 2000 
         , '40-5-12 Laogianggen'
         , '190518'
@@ -437,7 +437,7 @@ INSERT INTO localizacoes VALUES
         , 'CN'
         );
 
-INSERT INTO localizacoes VALUES 
+INSERT INTO hr.localizacoes VALUES 
         ( 2100 
         , '1298 Vileparle (E)'
         , '490231'
@@ -446,7 +446,7 @@ INSERT INTO localizacoes VALUES
         , 'IN'
         );
 
-INSERT INTO localizacoes VALUES 
+INSERT INTO hr.localizacoes VALUES 
         ( 2200 
         , '12-98 Victoria Street'
         , '2901'
@@ -455,7 +455,7 @@ INSERT INTO localizacoes VALUES
         , 'AU'
         );
 
-INSERT INTO localizacoes VALUES 
+INSERT INTO hr.localizacoes VALUES 
         ( 2300 
         , '198 Clementi North'
         , '540198'
@@ -464,7 +464,7 @@ INSERT INTO localizacoes VALUES
         , 'SG'
         );
 
-INSERT INTO localizacoes VALUES 
+INSERT INTO hr.localizacoes VALUES 
         ( 2400 
         , '8204 Arthur St'
         , NULL
@@ -473,7 +473,7 @@ INSERT INTO localizacoes VALUES
         , 'UK'
         );
 
-INSERT INTO localizacoes VALUES 
+INSERT INTO hr.localizacoes VALUES 
         ( 2500 
         , 'Magdalen Centre, The Oxford Science Park'
         , 'OX9 9ZB'
@@ -482,7 +482,7 @@ INSERT INTO localizacoes VALUES
         , 'UK'
         );
 
-INSERT INTO localizacoes VALUES 
+INSERT INTO hr.localizacoes VALUES 
         ( 2600 
         , '9702 Chester Road'
         , '09629850293'
@@ -491,7 +491,7 @@ INSERT INTO localizacoes VALUES
         , 'UK'
         );
 
-INSERT INTO localizacoes VALUES 
+INSERT INTO hr.localizacoes VALUES 
         ( 2700 
         , 'Schwanthalerstr. 7031'
         , '80925'
@@ -500,7 +500,7 @@ INSERT INTO localizacoes VALUES
         , 'DE'
         );
 
-INSERT INTO localizacoes VALUES 
+INSERT INTO hr.localizacoes VALUES 
         ( 2800 
         , 'Rua Frei Caneca 1360 '
         , '01307-002'
@@ -509,7 +509,7 @@ INSERT INTO localizacoes VALUES
         , 'BR'
         );
 
-INSERT INTO localizacoes VALUES 
+INSERT INTO hr.localizacoes VALUES 
         ( 2900 
         , '20 Rue des Corps-Saints'
         , '1730'
@@ -518,7 +518,7 @@ INSERT INTO localizacoes VALUES
         , 'CH'
         );
 
-INSERT INTO localizacoes VALUES 
+INSERT INTO hr.localizacoes VALUES 
         ( 3000 
         , 'Murtenstrasse 921'
         , '3095'
@@ -527,7 +527,7 @@ INSERT INTO localizacoes VALUES
         , 'CH'
         );
 
-INSERT INTO localizacoes VALUES 
+INSERT INTO hr.localizacoes VALUES 
         ( 3100 
         , 'Pieter Breughelstraat 837'
         , '3029SK'
@@ -536,7 +536,7 @@ INSERT INTO localizacoes VALUES
         , 'NL'
         );
 
-INSERT INTO localizacoes VALUES 
+INSERT INTO hr.localizacoes VALUES 
         ( 3200 
         , 'Mariano Escobedo 9991'
         , '11932'
@@ -550,189 +550,189 @@ INSERT INTO localizacoes VALUES
         * seus IDs e etc.
         */
        
-       INSERT INTO departamentos VALUES 
+       INSERT INTO hr.departamentos VALUES 
         ( 10
         , 'Administration'
         , 200
         , 1700
         );
 
-INSERT INTO departamentos VALUES 
+INSERT INTO hr.departamentos VALUES 
         ( 20
         , 'Marketing'
         , 201
         , 1800
         );
                                 
-INSERT INTO departamentos VALUES 
+INSERT INTO hr.departamentos VALUES 
         ( 30
         , 'Purchasing'
         , 114
         , 1700
 	);
                 
-INSERT INTO departamentos VALUES 
+INSERT INTO hr.departamentos VALUES 
         ( 40
         , 'Human Resources'
         , 203
         , 2400
         );
 
-INSERT INTO departamentos VALUES 
+INSERT INTO hr.departamentos VALUES 
         ( 50
         , 'Shipping'
         , 121
         , 1500
         );
                 
-INSERT INTO departamentos VALUES 
+INSERT INTO hr.departamentos VALUES 
         ( 60 
         , 'IT'
         , 103
         , 1400
         );
                 
-INSERT INTO departamentos VALUES 
+INSERT INTO hr.departamentos VALUES 
         ( 70 
         , 'Public Relations'
         , 204
         , 2700
         );
                 
-INSERT INTO departamentos VALUES 
+INSERT INTO hr.departamentos VALUES 
         ( 80 
         , 'Sales'
         , 145
         , 2500
         );
                 
-INSERT INTO departamentos VALUES 
+INSERT INTO hr.departamentos VALUES 
         ( 90 
         , 'Executive'
         , 100
         , 1700
         );
 
-INSERT INTO departamentos VALUES 
+INSERT INTO hr.departamentos VALUES 
         ( 100 
         , 'Finance'
         , 108
         , 1700
         );
                 
-INSERT into departamentos VALUES 
+INSERT into hr.departamentos VALUES 
         ( 110 
         , 'Accounting'
         , 205
         , 1700
         );
 
-INSERT INTO departamentos VALUES 
+INSERT INTO hr.departamentos VALUES 
         ( 120 
         , 'Treasury'
         , 105
         , 1700
         );
 
-INSERT INTO departamentos VALUES 
+INSERT INTO hr.departamentos VALUES 
         ( 130 
         , 'Corporate Tax'
         , 201
         , 1700
         );
 
-INSERT INTO departamentos VALUES 
+INSERT INTO hr.departamentos VALUES 
         ( 140 
         , 'Control And Credit'
         , NULL
         , 1700
         );
 
-INSERT into departamentos VALUES 
+INSERT into hr.departamentos VALUES 
         ( 150 
         , 'Shareholder Services'
         , NULL
         , 1700
         );
 
-INSERT INTO departamentos VALUES 
+INSERT INTO hr.departamentos VALUES 
         ( 160 
         , 'Benefits'
         , NULL
         , 1700
         );
 
-INSERT INTO departamentos VALUES 
+INSERT INTO hr.departamentos VALUES 
         ( 170 
         , 'Manufacturing'
         , NULL
         , 1700
         );
 
-INSERT INTO departamentos VALUES 
+INSERT INTO hr.departamentos VALUES 
         ( 180 
         , 'Construction'
         , NULL
         , 1700
         );
 
-INSERT INTO departamentos VALUES 
+INSERT INTO hr.departamentos VALUES 
         ( 190 
         , 'Contracting'
         , NULL
         , 1700
         );
 
-INSERT INTO departamentos  VALUES 
+INSERT INTO hr.departamentos  VALUES 
         ( 200 
         , 'Operations'
         , NULL
         , 1700
         );
 
-INSERT INTO departamentos  VALUES 
+INSERT INTO hr.departamentos  VALUES 
         ( 210 
         , 'IT Support'
         , NULL
         , 1700
         );
 
-INSERT INTO departamentos  VALUES 
+INSERT INTO hr.departamentos  VALUES 
         ( 220 
         , 'NOC'
         , NULL
         , 1700
         );
 
-INSERT INTO departamentos VALUES 
+INSERT INTO hr.departamentos VALUES 
         ( 230 
         , 'IT Helpdesk'
         , NULL
         , 1700
         );
 
-INSERT INTO departamentos  VALUES 
+INSERT INTO hr.departamentos  VALUES 
         ( 240 
         , 'Government Sales'
         , NULL
         , 1700
         );
 
-INSERT INTO departamentos  VALUES 
+INSERT INTO hr.departamentos  VALUES 
         ( 250 
         , 'Retail Sales'
         , NULL
         , 1700
         );
 
-INSERT INTO departamentos  VALUES 
+INSERT INTO hr.departamentos  VALUES 
         ( 260 
         , 'Recruiting'
         , NULL
         , 1700
         );
 
-INSERT INTO departamentos VALUES 
+INSERT INTO hr.departamentos VALUES 
         ( 270 
         , 'Payroll'
         , NULL
@@ -744,130 +744,130 @@ INSERT INTO departamentos VALUES
         * o ID do cargo, salário mín/máx, etc.
         */
        
-       INSERT INTO cargos VALUES 
+       INSERT INTO hr.cargos VALUES 
         ( 'AD_PRES'
         , 'President'
         , 20080
         , 40000
         );
-INSERT INTO cargos VALUES 
+INSERT INTO hr.cargos VALUES 
         ( 'AD_VP'
         , 'Administration Vice President'
         , 15000
         , 30000
         );
 
-INSERT INTO cargos VALUES 
+INSERT INTO hr.cargos VALUES 
         ( 'AD_ASST'
         , 'Administration Assistant'
         , 3000
         , 6000
         );
 
-INSERT INTO cargos VALUES 
+INSERT INTO hr.cargos VALUES 
         ( 'FI_MGR'
         , 'Finance Manager'
         , 8200
         , 16000
         );
 
-INSERT INTO cargos VALUES 
+INSERT INTO hr.cargos VALUES 
         ( 'FI_ACCOUNT'
         , 'Accountant'
         , 4200
         , 9000
         );
 
-INSERT INTO cargos VALUES 
+INSERT INTO hr.cargos VALUES 
         ( 'AC_MGR'
         , 'Accounting Manager'
         , 8200
         , 16000
         );
 
-INSERT into cargos VALUES 
+INSERT into hr.cargos VALUES 
         ( 'AC_ACCOUNT'
         , 'Public Accountant'
         , 4200
         , 9000
         );
-INSERT INTO cargos VALUES 
+INSERT INTO hr.cargos VALUES 
         ( 'SA_MAN'
         , 'Sales Manager'
         , 10000
         , 20080
         );
 
-INSERT INTO cargos VALUES 
+INSERT INTO hr.cargos VALUES 
         ( 'SA_REP'
         , 'Sales Representative'
         , 6000
         , 12008
         );
 
-INSERT INTO cargos VALUES 
+INSERT INTO hr.cargos VALUES 
         ( 'PU_MAN'
         , 'Purchasing Manager'
         , 8000
         , 15000
         );
 
-INSERT into cargos VALUES 
+INSERT into hr.cargos VALUES 
         ( 'PU_CLERK'
         , 'Purchasing Clerk'
         , 2500
         , 5500
         );
 
-INSERT INTO cargos VALUES 
+INSERT INTO hr.cargos VALUES 
         ( 'ST_MAN'
         , 'Stock Manager'
         , 5500
         , 8500
         );
-INSERT INTO cargos VALUES 
+INSERT INTO hr.cargos VALUES 
         ( 'ST_CLERK'
         , 'Stock Clerk'
         , 2008
         , 5000
         );
 
-INSERT INTO cargos VALUES 
+INSERT INTO hr.cargos VALUES 
         ( 'SH_CLERK'
         , 'Shipping Clerk'
         , 2500
         , 5500
         );
 
-INSERT into cargos VALUES 
+INSERT into hr.cargos VALUES 
         ( 'IT_PROG'
         , 'Programmer'
         , 4000
         , 10000
         );
 
-INSERT INTO cargos VALUES 
+INSERT INTO hr.cargos VALUES 
         ( 'MK_MAN'
         , 'Marketing Manager'
         , 9000
         , 15000
         );
 
-INSERT INTO cargos VALUES 
+INSERT INTO hr.cargos VALUES 
         ( 'MK_REP'
         , 'Marketing Representative'
         , 4000
         , 9000
         );
 
-INSERT INTO cargos  VALUES 
+INSERT INTO hr.cargos  VALUES 
         ( 'HR_REP'
         , 'Human Resources Representative'
         , 4000
         , 9000
         );
 
-INSERT INTO cargos VALUES 
+INSERT INTO hr.cargos VALUES 
         ( 'PR_REP'
         , 'Public Relations Representative'
         , 4500
@@ -881,7 +881,7 @@ INSERT INTO cargos VALUES
         * valores ''null'' dos inserts a seguir.
         */
 
-       INSERT INTO empregados VALUES 
+       INSERT INTO hr.empregados VALUES 
         ( 100
         , 'Steven King'
         , 'SKING'
@@ -894,7 +894,7 @@ INSERT INTO cargos VALUES
         , 90
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 101
         , 'Neena Kochhar'
         , 'NKOCHHAR'
@@ -907,7 +907,7 @@ INSERT INTO empregados VALUES
         , 90
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 102
         , 'Lex De Haan'
         , 'LDEHAAN'
@@ -920,7 +920,7 @@ INSERT INTO empregados VALUES
         , 90
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 103
         , 'Alexander Hunold'
         , 'AHUNOLD'
@@ -933,7 +933,7 @@ INSERT INTO empregados VALUES
         , 60
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 104
         , 'Bruce Ernst'
         , 'BERNST'
@@ -946,7 +946,7 @@ INSERT INTO empregados VALUES
         , 60
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 105
         , 'David Austin'
         , 'DAUSTIN'
@@ -959,7 +959,7 @@ INSERT INTO empregados VALUES
         , 60
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 106
         , 'Valli Pataballa'
         , 'VPATABAL'
@@ -972,7 +972,7 @@ INSERT INTO empregados VALUES
         , 60
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 107
         , 'Diana Lorentz'
         , 'DLORENTZ'
@@ -985,7 +985,7 @@ INSERT INTO empregados VALUES
         , 60
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 108
         , 'Nancy Greenberg'
         , 'NGREENBE'
@@ -998,7 +998,7 @@ INSERT INTO empregados VALUES
         , 100
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 109
         , 'Daniel Faviet'
         , 'DFAVIET'
@@ -1011,7 +1011,7 @@ INSERT INTO empregados VALUES
         , 100
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 110
         , 'John Chen'
         , 'JCHEN'
@@ -1024,7 +1024,7 @@ INSERT INTO empregados VALUES
         , 100
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 111
         , 'Ismael Sciarra'
         , 'ISCIARRA'
@@ -1037,7 +1037,7 @@ INSERT INTO empregados VALUES
         , 100
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 112
         , 'Jose Manuel Urman'
         , 'JMURMAN'
@@ -1050,7 +1050,7 @@ INSERT INTO empregados VALUES
         , 100
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 113
         , 'Luis Popp'
         , 'LPOPP'
@@ -1063,7 +1063,7 @@ INSERT INTO empregados VALUES
         , 100
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 114
         , 'Den Raphaely'
         , 'DRAPHEAL'
@@ -1076,7 +1076,7 @@ INSERT INTO empregados VALUES
         , 30
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 115
         , 'Alexander Khoo'
         , 'AKHOO'
@@ -1089,7 +1089,7 @@ INSERT INTO empregados VALUES
         , 30
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 116
         , 'Shelli Baida'
         , 'SBAIDA'
@@ -1102,7 +1102,7 @@ INSERT INTO empregados VALUES
         , 30
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 117
         , 'Sigal Tobias'
         , 'STOBIAS'
@@ -1115,7 +1115,7 @@ INSERT INTO empregados VALUES
         , 30
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 118
         , 'Guy Himuro'
         , 'GHIMURO'
@@ -1128,7 +1128,7 @@ INSERT INTO empregados VALUES
         , 30
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 119
         , 'Karen Colmenares'
         , 'KCOLMENA'
@@ -1141,7 +1141,7 @@ INSERT INTO empregados VALUES
         , 30
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 120
         , 'Matthew Weiss'
         , 'MWEISS'
@@ -1154,7 +1154,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 121
         , 'Adam Fripp'
         , 'AFRIPP'
@@ -1167,7 +1167,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT into empregados VALUES 
+INSERT into hr.empregados VALUES 
         ( 122
         , 'Payam Kaufling'
         , 'PKAUFLIN'
@@ -1180,7 +1180,7 @@ INSERT into empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 123
         , 'Shanta Vollman'
         , 'SVOLLMAN'
@@ -1193,7 +1193,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 124
         , 'Kevin Mourgos'
         , 'KMOURGOS'
@@ -1206,7 +1206,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 125
         , 'Julia Nayer'
         , 'JNAYER'
@@ -1219,7 +1219,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 126
         , 'Irene Mikkilineni'
         , 'IMIKKILI'
@@ -1232,7 +1232,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 127
         , 'James Landry'
         , 'JLANDRY'
@@ -1245,7 +1245,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 128
         , 'Steven Markle'
         , 'SMARKLE'
@@ -1258,7 +1258,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 129
         , 'Laura Bissot'
         , 'LBISSOT'
@@ -1271,7 +1271,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 130
         , 'Mozhe Atkinson'
         , 'MATKINSO'
@@ -1284,7 +1284,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 131
         , 'James Marlow'
         , 'JAMRLOW'
@@ -1297,7 +1297,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 132
         , 'TJ Olson'
         , 'TJOLSON'
@@ -1310,7 +1310,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 133
         , 'Jason Mallin'
         , 'JMALLIN'
@@ -1323,7 +1323,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 134
         , 'Michael Rogers'
         , 'MROGERS'
@@ -1336,7 +1336,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 135
         , 'Ki Gee'
         , 'KGEE'
@@ -1349,7 +1349,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 136
         , 'Hazel Philtanker'
         , 'HPHILTAN'
@@ -1362,7 +1362,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 137
         , 'Renski Ladwig'
         , 'RLADWIG'
@@ -1375,7 +1375,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 138
         , 'Stephen Stiles'
         , 'SSTILES'
@@ -1388,7 +1388,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 139
         , 'John Seo'
         , 'JSEO'
@@ -1401,7 +1401,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 140
         , 'Joshua Patel'
         , 'JPATEL'
@@ -1414,7 +1414,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 141
         , 'Trenna Rajs'
         , 'TRAJS'
@@ -1427,7 +1427,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 142
         , 'Curtis Davies'
         , 'CDAVIES'
@@ -1440,7 +1440,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 143
         , 'Randall Matos'
         , 'RMATOS'
@@ -1453,7 +1453,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 144
         , 'Peter Vargas'
         , 'PVARGAS'
@@ -1466,7 +1466,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 145
         , 'John Russell'
         , 'JRUSSEL'
@@ -1479,7 +1479,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 146
         , 'Karen Partners'
         , 'KPARTNER'
@@ -1492,7 +1492,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 147
         , 'Alberto Errazuriz'
         , 'AERRAZUR'
@@ -1505,7 +1505,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 148
         , 'Gerald Cambrault'
         , 'GCAMBRAU'
@@ -1518,7 +1518,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 149
         , 'Eleni Zlotkey'
         , 'EZLOTKEY'
@@ -1531,7 +1531,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 150
         , 'Peter Tucker'
         , 'PTUCKER'
@@ -1544,7 +1544,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 151
         , 'David Bernstein'
         , 'DBERNSTE'
@@ -1557,7 +1557,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT into empregados VALUES 
+INSERT into hr.empregados VALUES 
         ( 152
         , 'Peter Hall'
         , 'PHALL'
@@ -1570,7 +1570,7 @@ INSERT into empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 153
         , 'Christopher Olsen'
         , 'COLSEN'
@@ -1583,7 +1583,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 154
         , 'Nanette Cambrault'
         , 'NCAMBRAU'
@@ -1596,7 +1596,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 155
         , 'Oliver Tuvault'
         , 'OTUVAULT'
@@ -1609,7 +1609,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 156
         , 'Janette King'
         , 'JKING'
@@ -1622,7 +1622,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 157
         , 'Patrick Sully'
         , 'PSULLY'
@@ -1635,7 +1635,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 158
         , 'Allan McEwen'
         , 'AMCEWEN'
@@ -1648,7 +1648,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT into empregados VALUES 
+INSERT into hr.empregados VALUES 
         ( 159
         , 'Lindsey Smith'
         , 'LSMITH'
@@ -1661,7 +1661,7 @@ INSERT into empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 160
         , 'Louise Doran'
         , 'LDORAN'
@@ -1674,7 +1674,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 161
         , 'Sarath Sewall'
         , 'SSEWALL'
@@ -1687,7 +1687,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 162
         , 'Clara Vishney'
         , 'CVISHNEY'
@@ -1700,7 +1700,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 163
         , 'Danielle Greene'
         , 'DGREENE'
@@ -1713,7 +1713,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 164
         , 'Mattea Marvins'
         , 'MMARVINS'
@@ -1726,7 +1726,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 165
         , 'David Lee'
         , 'DLEE'
@@ -1739,7 +1739,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 166
         , 'Sundar Ande'
         , 'SANDE'
@@ -1752,7 +1752,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 167
         , 'Amit Banda'
         , 'ABANDA'
@@ -1765,7 +1765,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 168
         , 'Lisa Ozer'
         , 'LOZER'
@@ -1778,7 +1778,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 169  
         , 'Harrison Bloom'
         , 'HBLOOM'
@@ -1791,7 +1791,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 170
         , 'Tayler Fox'
         , 'TFOX'
@@ -1804,7 +1804,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 171
         , 'William Smith'
         , 'WSMITH'
@@ -1817,7 +1817,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 172
         , 'Elizabeth Bates'
         , 'EBATES'
@@ -1830,7 +1830,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 173
         , 'Sundita Kumar'
         , 'SKUMAR'
@@ -1843,7 +1843,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 174
         , 'Ellen Abel'
         , 'EABEL'
@@ -1856,7 +1856,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 175
         , 'Alyssa Hutton'
         , 'AHUTTON'
@@ -1869,7 +1869,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 176
         , 'Jonathon Taylor'
         , 'JTAYLOR'
@@ -1882,7 +1882,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 177
         , 'Jack Livingston'
         , 'JLIVINGS'
@@ -1895,7 +1895,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 178
         , 'Kimberely Grant'
         , 'KGRANT'
@@ -1908,7 +1908,7 @@ INSERT INTO empregados VALUES
         , NULL
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 179
         , 'Charles Johnson'
         , 'CJOHNSON'
@@ -1921,7 +1921,7 @@ INSERT INTO empregados VALUES
         , 80
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 180
         , 'Winston Taylor'
         , 'WTAYLOR'
@@ -1934,7 +1934,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 181
         , 'Jean Fleaur'
         , 'JFLEAUR'
@@ -1947,7 +1947,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 182
         , 'Martha Sullivan'
         , 'MSULLIVA'
@@ -1960,7 +1960,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 183
         , 'Girard Geoni'
         , 'GGEONI'
@@ -1973,7 +1973,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 184
         , 'Nandita Sarchand'
         , 'NSARCHAN'
@@ -1986,7 +1986,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 185
         , 'Alexis Bull'
         , 'ABULL'
@@ -1999,7 +1999,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 186
         , 'Julia Dellinger'
         , 'JDELLING'
@@ -2012,7 +2012,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 187
         , 'Anthony Cabrio'
         , 'ACABRIO'
@@ -2025,7 +2025,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 188
         , 'Kelly Chung'
         , 'KCHUNG'
@@ -2038,7 +2038,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 189
         , 'Jennifer Dilly'
         , 'JDILLY'
@@ -2051,7 +2051,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 190
         , 'Timothy Gates'
         , 'TGATES'
@@ -2064,7 +2064,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 191
         , 'Randall Perkins'
         , 'RPERKINS'
@@ -2077,7 +2077,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 192
         , 'Sarah Bell'
         , 'SBELL'
@@ -2090,7 +2090,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 193
         , 'Britney Everett'
         , 'BEVERETT'
@@ -2103,7 +2103,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 194
         , 'Samuel McCain'
         , 'SMCCAIN'
@@ -2116,7 +2116,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 195
         , 'Vance Jones'
         , 'VJONES'
@@ -2129,7 +2129,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 196
         , 'Alana Walsh'
         , 'AWALSH'
@@ -2142,7 +2142,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 197
         , 'Kevin Feeney'
         , 'KFEENEY'
@@ -2155,7 +2155,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 198
         , 'Donald OConnell'
         , 'DOCONNEL'
@@ -2168,7 +2168,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 199
         , 'Douglas Grant'
         , 'DGRANT'
@@ -2181,7 +2181,7 @@ INSERT INTO empregados VALUES
         , 50
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 200
         , 'Jennifer Whalen'
         , 'JWHALEN'
@@ -2194,7 +2194,7 @@ INSERT INTO empregados VALUES
         , 10
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 201
         , 'Michael Hartstein'
         , 'MHARTSTE'
@@ -2207,7 +2207,7 @@ INSERT INTO empregados VALUES
         , 20
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 202
         , 'Pat Fay'
         , 'PFAY'
@@ -2220,7 +2220,7 @@ INSERT INTO empregados VALUES
         , 20
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 203
         , 'Susan Mavris'
         , 'SMAVRIS'
@@ -2233,7 +2233,7 @@ INSERT INTO empregados VALUES
         , 40
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 204
         , 'Hermann Baer'
         , 'HBAER'
@@ -2246,7 +2246,7 @@ INSERT INTO empregados VALUES
         , 70
         );
 
-INSERT into empregados VALUES 
+INSERT into hr.empregados VALUES 
         ( 205
         , 'Shelley Higgins'
         , 'SHIGGINS'
@@ -2259,7 +2259,7 @@ INSERT into empregados VALUES
         , 110
         );
 
-INSERT INTO empregados VALUES 
+INSERT INTO hr.empregados VALUES 
         ( 206
         , 'William Gietz'
         , 'WGIETZ'
@@ -2276,35 +2276,35 @@ INSERT INTO empregados VALUES
         * pertinentes a tabela do histórico de cargos.
         */
        
-       INSERT INTO historico_cargos
+       INSERT INTO hr.historico_cargos
 VALUES (102
        , TO_DATE('13-01-2001', 'dd-MM-yyyy')
        , TO_DATE('24-07-2006', 'dd-MM-yyyy')
        , 'IT_PROG'
        , 60);
 
-INSERT INTO historico_cargos
+INSERT INTO hr.historico_cargos
 VALUES (101
        , TO_DATE('21-09-1997', 'dd-MM-yyyy')
        , TO_DATE('27-10-2001', 'dd-MM-yyyy')
        , 'AC_ACCOUNT'
        , 110);
 
-INSERT INTO historico_cargos
+INSERT INTO hr.historico_cargos
 VALUES (101
        , TO_DATE('28-10-2001', 'dd-MM-yyyy')
        , TO_DATE('15-03-2005', 'dd-MM-yyyy')
        , 'AC_MGR'
        , 110);
 
-INSERT INTO historico_cargos
+INSERT INTO hr.historico_cargos
 VALUES (201
        , TO_DATE('17-02-2004', 'dd-MM-yyyy')
        , TO_DATE('19-12-2007', 'dd-MM-yyyy')
        , 'MK_REP'
        , 20);
 
-INSERT INTO historico_cargos
+INSERT INTO hr.historico_cargos
 VALUES  (114
         , TO_DATE('24-03-2006', 'dd-MM-yyyy')
         , TO_DATE('31-12-2007', 'dd-MM-yyyy')
@@ -2312,7 +2312,7 @@ VALUES  (114
         , 50
         );
 
-INSERT INTO historico_cargos
+INSERT INTO hr.historico_cargos
 VALUES  (122
         , TO_DATE('01-01-2007', 'dd-MM-yyyy')
         , TO_DATE('31-12-2007', 'dd-MM-yyyy')
@@ -2320,7 +2320,7 @@ VALUES  (122
         , 50
         );
 
-INSERT INTO historico_cargos
+INSERT INTO hr.historico_cargos
 VALUES  (200
         , TO_DATE('17-09-1995', 'dd-MM-yyyy')
         , TO_DATE('17-06-2001', 'dd-MM-yyyy')
@@ -2328,7 +2328,7 @@ VALUES  (200
         , 90
         );
 
-INSERT INTO historico_cargos
+INSERT INTO hr.historico_cargos
 VALUES  (176
         , TO_DATE('24-03-2006', 'dd-MM-yyyy')
         , TO_DATE('31-12-2006', 'dd-MM-yyyy')
@@ -2336,7 +2336,7 @@ VALUES  (176
         , 80
         );
 
-INSERT INTO historico_cargos
+INSERT INTO hr.historico_cargos
 VALUES  (176
         , TO_DATE('01-01-2007', 'dd-MM-yyyy')
         , TO_DATE('31-12-2007', 'dd-MM-yyyy')
@@ -2344,7 +2344,7 @@ VALUES  (176
         , 80
         );
 
-INSERT INTO historico_cargos
+INSERT INTO hr.historico_cargos
 VALUES  (200
         , TO_DATE('01-07-2002', 'dd-MM-yyyy')
         , TO_DATE('31-12-2006', 'dd-MM-yyyy')
